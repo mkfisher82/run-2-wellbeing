@@ -1,0 +1,53 @@
+a {
+    color: #107a66;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.condition {
+    padding-bottom: 20px;
+}
+
+.acceptCB {
+    font-weight: 700;
+    text-align: center;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 1.15em;
+}
+fieldset {
+    margin-bottom: 20px;
+}
+
+body {
+    margin: 0;
+}
+// h1 {
+//     font-size: 6rem;
+// }
+// h2 {
+//     font-size: 3.75rem;
+// }
+// h3 {
+//     font-size: 3rem;
+// }
+// h4 {
+//     font-size: 2.125rem;
+// }
+// h5 {
+//     font-size: 1.5rem;
+// }
+// h6 {
+//     font-size: 1.25rem;
+// }
+p {
+    font-size: 1.25em;
+}
+
+input#acceptCB {
+    margin-left: 20px;
+    transform: scale(1.5);
+}

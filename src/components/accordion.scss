@@ -1,0 +1,53 @@
+.accordion-container {
+  max-width: 960px;
+  min-width: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow:-2px 1px 2px 2px #212121;
+  
+  div {
+    transition: border-color 0.5s ease-in;
+  }
+}
+
+.answer, .summary {
+  display: inline-block;
+  margin: 0;
+}
+
+.answer {
+  color: #222;
+}
+
+.summary {
+  padding-bottom: 30px;
+  font-weight:600;
+  cursor: pointer;
+  &:before {
+    content: '>\0000a0';
+  } 
+}
+
+.folding-pannel {
+  display: block;
+  transition: all 0.2s ease-in;
+}
+
+.active .summary {
+  border-color: transparent;
+  transition: border-color 0.2s ease-out;
+}
+
+.inactive .folding-pannel {
+  transform-origin: 50% 0%;
+  transform: perspective(250px) rotateX(-90deg);
+  transition: all 0.4s ease-in-out;
+  height: 0;
+
+}
+.active .folding-pannel {
+  transform: perspective(350px) rotateX(0deg);
+  transition: all 0.4s ease-in-out;
+  padding: 0 40px 30px 40px;
+}
