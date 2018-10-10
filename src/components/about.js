@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import NicoleImgLarge from './nicoleImgLarge';
 import SectionTitle from './sectionTitle';
+import UESCA from '../images/Cropped-UESCA-Logo.png';
 
 const Wrapper = styled.div`
   margin: 0px auto;
@@ -33,6 +34,12 @@ const Content = styled.div`
   margin-bottom: 0px;
 `;
 
+const UescaLogo = styled.img`
+  max-width: 200px;
+  margin: 0px auto;
+  display: block;
+`
+
 const aboutNicole = () => (
   <Container>
     <Wrapper>
@@ -60,6 +67,7 @@ const aboutNicole = () => (
           three wonderful children.
         </p>
       </Content>
+      <UescaLogo src={UESCA} width="100%" alt="UESCA certified coach" />
     </Wrapper>
   </Container>
 );

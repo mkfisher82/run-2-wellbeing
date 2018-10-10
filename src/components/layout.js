@@ -9,6 +9,8 @@ import Footer from '../components/footer';
 import './style.scss';
 import './normalise.scss';
 
+import Favicon from '../images/r2wb-favicon.png';
+
 const Page = styled.div`
   margin: 0px auto;
 `;
@@ -34,6 +36,9 @@ const Layout = ({ children }) => (
             { name: 'description', content: 'The run 2 wellbeing website' },
         { name: 'keywords', content: 'running, wellbeing, mental health' },
         { name: 'viewport', content: 'width=device-width' },
+          ]}
+          link={[
+            {rel: 'shortcut icon', type: 'image/png', href: `${Favicon}`}
           ]}
         >
           <html lang="en" />
