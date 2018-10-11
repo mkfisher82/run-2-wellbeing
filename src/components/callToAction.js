@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
@@ -34,36 +35,27 @@ const Text = styled.h4`
   margin: 0;
 `;
 
-const Form = styled.form`
-  text-align: center;
-`;
-
-const Input = styled.input`
-  width: 500px;
-  font-size: 1.5rem;
-  padding: 10px;
-`;
-
 const Button = styled.button`
-  padding: 10px;
-  font-size: 1.5rem;
-  margin-left: 20px;
-  background-color: #107a66;
-  width: 200px;
-  height: 50px;
-  border-radius: 5px;
-  color: white;
+    background-color: #107a66;
+    text-decoration: none;
+    font-size: 1.75em;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    padding: 12px 60px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    display: block;
+    margin: 20px auto;
 `;
 
 const callToAction = () => {
   return (
     <Container>
       <Wrapper>
-        <Text> Start a free trial today!</Text>
-        <Form name="callToAction" method="POST" action="/.netlify/functions/sendEmail">
-          <Input type="email" name="email" id="email" placeholder="someone@example.com" />
-          <Button type="submit">Sign Up</Button>
-        </Form>
+        <Text> Get started for free today!</Text>
+        <Button onClick={() => location.href='https://www.run2wellbeing.co.nz/#pricing'}> Go To Pricing </Button>
       </Wrapper>
     </Container>
   );
