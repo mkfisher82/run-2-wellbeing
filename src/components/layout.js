@@ -34,8 +34,9 @@ const Layout = ({ children }) => (
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'The run 2 wellbeing website' },
-        { name: 'keywords', content: 'running, wellbeing, mental health' },
-        { name: 'viewport', content: 'width=device-width' },
+            { name: 'keywords', content: 'running, wellbeing, mental health' },
+            { name: 'viewport', content: 'width=device-width' },
+            { name: 'google-site-verification', content: 'UeaKXdCgblOxP54PXFqr4j8OpPAAuJglUKtJ9UrOfVM' },
           ]}
           link={[
             {rel: 'shortcut icon', type: 'image/png', href: `${Favicon}`}
