@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import SectionTitle from './sectionTitle';
 import Package from './package';
+import Checkout from './checkout';
+import { relative } from 'path';
 
 const Container = styled.section`
   position: relative;
@@ -23,27 +26,22 @@ const Container = styled.section`
   }
 `;
 
-const Input = styled.input`
-  width: 500px;
-  font-size: 1.5rem;
-  padding: 10px;
-`;
-
 const Button = styled.button`
-  padding: 10px;
-  font-size: 1.5rem;
-  margin-left: 20px;
-  background-color: #107a66;
-  width: 200px;
-  height: 50px;
-  border-radius: 5px;
-  color: white;
+    background-color: #107a66;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    padding: 12px 60px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    display: block;
+    margin: 20px auto;
 `;
 
-const Email = styled.div`
-  text-align: center;
-  padding: 40px 0;
-`;
 
 const Preamble = styled.p`
   font-size: 2rem;
@@ -62,13 +60,19 @@ const Wrapper = styled.div`
   padding: 0 5%;
 `;
 
+const Cell = styled.div`
+  background-color: #FFFFFF;
+  border: 3px solid #e8e8e8;
+  border-radius: 7px;
+`
+
 const pricing = () => (
   <Container>
     <Wrapper>
       <SectionTitle title="Pricing" />
-      <Preamble>Select a plan and enter your email to get started:</Preamble>
-      <form action="/.netlify/functions/sendEmail" method="POST">
+      <Preamble>Select from one of our two great plans:</Preamble>
         <Grid>
+          <Cell>
           <Package
             name="Starter"
             price="Free"
@@ -77,28 +81,34 @@ const pricing = () => (
               'Initial Skype Consulation (30mins)',
               '2 Week customised training programme',
               'Email and text message support',
-              'Access to the Run 2 Wellbeing Facebook group',
+              'Limit one per person'
             ]}
+            
           />
+            <Button onClick={() => location.href='/client'}> GET STARTED </Button>
+
+          
+          </Cell>
+          <Cell>
+
+
           <Package
             name="Total Wellness"
-            price="$280"
+            price="$180"
             period="12 Weeks"
             features={[
               'Initial Skype Consulation (up to 90mins)',
               '3 x 4 Weekly customised training programme',
               'Skype review after every 4 week block to check you are on track ',
               'Unlimited email and text message support',
-              'Access to both the Run 2 Wellbeing Facebook group and the closed support group',
+              'Access to the Run 2 Wellbeing closed Facebook support group',
             ]}
-            checked="true"
           />
+          <Checkout />
+          </Cell>
+          
         </Grid>
-        <Email>
-          <Input type="email" placeholder="someone@example.com" name="email" id="to" />
-          <Button type="submit">Let&apos;s do it!</Button>
-        </Email>
-      </form>
+      
     </Wrapper>
   </Container>
 );

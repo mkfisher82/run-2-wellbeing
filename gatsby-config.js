@@ -27,5 +27,6 @@ module.exports = {
         head: false,
       },
     },
+    `gatsby-plugin-stripe-checkout`,
   ],
 }
