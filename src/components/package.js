@@ -5,7 +5,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  border: 3px solid #e8e8e8;
+  /* border: 3px solid #e8e8e8; */
   border-radius: 7px;
   display: block;
   padding: 24px;
@@ -79,16 +79,13 @@ const programme = props => {
   ));
 
   return (
-    <label htmlFor={props.name}>
       <Wrapper>
         <Name>{props.name}</Name>
         <Price>{props.price}</Price>
         <Period>{props.period}</Period>
         <hr />
         <ul>{featureList}</ul>
-        <input type="radio" id={props.name} name="package" value={props.name} />
       </Wrapper>
-    </label>
   );
 };
 

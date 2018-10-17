@@ -21,6 +21,20 @@ const Textarea = styled.textarea`
   width: 100%;
 `;
 
+const Button = styled.button`
+    background-color: #107a66;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    padding: 12px 60px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    display: block;
+`;
+
 const contactForm = () => {
   return (
     <Container>
@@ -48,7 +62,7 @@ const contactForm = () => {
           <Textarea name="message" id="message" cols={30} rows={10} />
         </p>
         <p>
-          <button type="submit">Send</button>
+          <Button type="submit">Send</Button>
         </p>
       </form>
     </Container>
