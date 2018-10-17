@@ -5,24 +5,24 @@ const Container = styled.div`
   padding: 10px;
 `;
 
+
 const contactDetails = () => {
   return (
     <Container>
       <p>
         <strong>Address:</strong>
       </p>
-      <p>
-        <address>
-          1/15 Moeller St
-          <br />
-          Taradale,
-          <br />
-          Napier, Hawkes Bay <br />
-          New Zealand
-          <br />
-          4112
-        </address>
-      </p>
+      <address>
+        1/15 Moeller St
+        <br />
+        Taradale,
+        <br />
+        Napier, Hawkes Bay <br />
+        New Zealand
+        <br />
+        4112
+      </address>
+      
       <p>
         <strong>Phone:</strong>
       </p>

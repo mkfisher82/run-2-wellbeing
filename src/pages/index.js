@@ -11,6 +11,7 @@ import Supported from '../components/supported';
 import Pricing from '../components/pricing';
 import FAQ from '../components/faq';
 
+
 import MountainRunner from '../images/kalen-emsley-99660-unsplash-c_scale,w_1920.jpeg';
 
 const Body = styled.div`

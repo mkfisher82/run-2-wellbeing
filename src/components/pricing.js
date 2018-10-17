@@ -91,7 +91,6 @@ const pricing = () => (
               'Unlimited email and text message support',
               'Access to both the Run 2 Wellbeing Facebook group and the closed support group',
             ]}
-            checked="true"
           />
         </Grid>
         <Email>

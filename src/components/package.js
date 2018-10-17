@@ -86,7 +86,7 @@ const programme = props => {
         <Period>{props.period}</Period>
         <hr />
         <ul>{featureList}</ul>
-        <input type="radio" id={props.name} name="package" value={props.name} checked={props.checked} />
+        <input type="radio" id={props.name} name="package" value={props.name} />
       </Wrapper>
     </label>
   );

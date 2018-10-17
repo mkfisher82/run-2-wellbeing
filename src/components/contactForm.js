@@ -29,7 +29,7 @@ const contactForm = () => {
         method="POST"
         action="/.netlify/functions/sendContactForm"
         netlify-honeypot="bot-field"
-        netlify
+        netlify="true"
       >
         <HoneyPot>
           <Label htmlFor="contact-bot-field">Don’t fill this out if you%apos;re human:</Label>
