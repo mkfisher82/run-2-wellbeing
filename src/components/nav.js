@@ -12,7 +12,7 @@ const NavContainer = styled.div`
 `;
 
 const ButtonGroup = styled.div`
-  justify-self: right;
+  justify-self: center;
   align-self: center;
 `;
 
@@ -27,9 +27,9 @@ const NavButton = props => <Button to={props.target}>{props.name}</Button>;
 const Nav = () => (
   <NavContainer>
     <ButtonGroup>
-      <NavButton target="/" name="Home" />
       <NavButton target="#programme" name="Programme" />
       <NavButton target="#pricing" name="Pricing" />
+      <NavButton target="/resources" name="Resources" />
       <NavButton target="#about" name="About" />
       <NavButton target="#contact" name="Contact" />
     </ButtonGroup>
