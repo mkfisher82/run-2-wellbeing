@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
-    padding: 10px 5%;
-    height: 300px;
+  padding: 10px 5%;
 `
 
 const Title = styled.a`
