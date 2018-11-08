@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 6px;
   margin: 20px 0px;
+  padding-bottom: 20px;
 `
 
 const resource = props => {

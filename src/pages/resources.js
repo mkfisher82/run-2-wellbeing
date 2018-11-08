@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
-import FeelingAnxiousImg from '../images/FeelingAnxious.jpg';
+import FeatureImg from '../images/RunningHelpedArticle.jpg';
 
 const Container = styled.div`
   max-width: 960px;
@@ -26,10 +26,10 @@ export default function About() {
                 <SectionTitle title="Resources" />
                 <p>Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out these articles, videos and blog posts to learn more about the power of exercise to change your brain, your body and your life.</p>
 
-                <FeatureResource                        link='https://running.competitor.com/2015/10/trail-running/feeling-anxious-research-shows-trail-running-benefits-your-brain_138204' 
-                title="Feeling Anxious? Research Shows Trail Running Benefits Your Brain"
-                desc="By now we know that physical exercise undoubtedly provides mental health benefits. But does it matter where the exercise takes place? This article discusses a study that showed trail running was as effective as Cognitive Behaviour Therapy in reducing symptoms of anxiety."
-                image={FeelingAnxiousImg}
+                <FeatureResource                        link='https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/' 
+                title="Depression, anxiety, OCD – running helped us beat them"
+                desc="This article features real runners who use the sport to manage significant mental health issues."
+                image={FeatureImg}
                 />
 
                 {resources.map((resource)=> {
@@ -43,8 +43,13 @@ export default function About() {
 
 const resources = [
     {
+        link: 'https://running.competitor.com/2015/10/trail-running/feeling-anxious-research-shows-trail-running-benefits-your-brain_138204',
+        title: "ARTICLE: Feeling Anxious? Research Shows Trail Running Benefits Your Brain",
+        desc: "By now we know that physical exercise undoubtedly provides mental health benefits. But does it matter where the exercise takes place? This article discusses a study that showed trail running was as effective as Cognitive Behaviour Therapy in reducing symptoms of anxiety."
+    },
+    {
         link: 'https://www.ted.com/talks/wendy_suzuki_the_brain_changing_benefits_of_exercise/up-next?language=en',
-        title: "The brain changing benefits of exercise",
+        title: "VIDEO: The brain changing benefits of exercise",
         desc: "An entertaining Ted Talk that details how exercise can actually change the structure of the brain."
     },
     {
