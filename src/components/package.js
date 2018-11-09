@@ -51,6 +51,12 @@ const Price = styled.div`
   font-weight: bold;
 `;
 
+const NormalPrice = styled.div`
+  margin-top: 7px;
+  font-size: 2rem;
+  text-decoration: line-through;
+`;
+
 const Period = styled.div`
   font-size: 1.5rem;
   font-weight: 600;
@@ -69,24 +75,56 @@ const FAIcon = styled(FontAwesomeIcon)`
   display: inline-block;
 `;
 
-const programme = props => {
-  const features = props.features;
-  const featureList = features.map(feature => (
-    <ListItem key={feature.toString()}>
-      <FAIcon size="lg" color="#107a66" icon={faCheck} />
-      <p>{feature}</p>
-    </ListItem>
-  ));
+class Programme extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {onSale: this.props.onSale};
+  }
 
-  return (
-      <Wrapper>
-        <Name>{props.name}</Name>
-        <Price>{props.price}</Price>
-        <Period>{props.period}</Period>
-        <hr />
-        <ul>{featureList}</ul>
-      </Wrapper>
-  );
+  render() {
+    let onSale = this.state.onSale;
+    let displayPrice;
+
+    const features = this.props.features;
+    const featureList = features.map(feature => (
+      <ListItem key={feature.toString()}>
+        <FAIcon size="lg" color="#107a66" icon={faCheck} />
+        <p>{feature}</p>
+      </ListItem>
+    ));
+
+    if (onSale) {
+      displayPrice = <SalePrice price={this.props.price} discountPrice={this.props.discountPrice} />
+    } else {
+      displayPrice = <RegularPrice price={this.props.price}/>
+    }
+  
+    return (
+        <Wrapper>
+          <Name>{this.props.name}</Name>
+          {displayPrice}
+          <Period>{this.props.period}</Period>
+          <hr />
+          <ul>{featureList}</ul>
+        </Wrapper>
+    );
+  }
 };
 
-export default programme;
+export default Programme;
+
+function RegularPrice(props) {
+  return (
+    <Price>{props.price}</Price>
+  );
+}
+
+function SalePrice(props) {
+  return (
+    <div>
+      <NormalPrice>Usually {props.price}</NormalPrice>
+      <Price>Now {props.discountPrice}</Price>
+      <p>Only 3 remaining at this price</p>
+    </div>
+  );
+}

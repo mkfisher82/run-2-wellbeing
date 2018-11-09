@@ -76,6 +76,8 @@ const pricing = () => (
           <Package
             name="Starter"
             price="Free"
+            discountPrice="Free"
+            onSale={false}
             period="2 Weeks"
             features={[
               'Initial Skype Consulation (30mins)',
@@ -94,7 +96,9 @@ const pricing = () => (
 
           <Package
             name="Total Wellness"
-            price="$180"
+            price="$280"
+            discountPrice="$180"
+            onSale={true}
             period="12 Weeks"
             features={[
               'Initial Skype Consulation (up to 90mins)',
