@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
-import FeatureImg from '../images/RunningHelpedArticle.jpg';
+import FeatureImg from '../images/TheExerciseEffect.jpg';
 
 const Container = styled.div`
   max-width: 960px;
@@ -26,9 +26,9 @@ export default function About() {
                 <SectionTitle title="Resources" />
                 <p>Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out these articles, videos and blog posts to learn more about the power of exercise to change your brain, your body and your life.</p>
 
-                <FeatureResource                        link='https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/' 
-                title="Depression, anxiety, OCD – running helped us beat them"
-                desc="This article features real runners who use the sport to manage significant mental health issues."
+                <FeatureResource                        link='https://www.apa.org/monitor/2011/12/exercise.aspx' 
+                title="The Exercise Effect"
+                desc="If you are keen to know the mechanisms of why exercise is so good for your mental health - check out this article from the American Psychological Association"
                 image={FeatureImg}
                 />
 
@@ -42,6 +42,11 @@ export default function About() {
 }
 
 const resources = [
+    {
+        link:'https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/', 
+        title:"ARTICLE: Depression, anxiety, OCD – running helped us beat them",
+        desc:"This article features real runners who use the sport to manage significant mental health issues."
+    },
     {
         link: 'https://running.competitor.com/2015/10/trail-running/feeling-anxious-research-shows-trail-running-benefits-your-brain_138204',
         title: "ARTICLE: Feeling Anxious? Research Shows Trail Running Benefits Your Brain",
