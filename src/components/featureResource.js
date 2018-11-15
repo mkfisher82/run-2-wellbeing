@@ -18,6 +18,7 @@ const Title = styled.a`
 
 const FeatureImg = styled.img`
   display: block;
+  max-width: 100%;
 `
 
 const Feature = styled.h3`

@@ -17,9 +17,15 @@ const ButtonGroup = styled.div`
 `;
 
 const Button = styled(Link)`
-  margin: 5px;
-  padding: 8px;
-  font-size: 2rem;
+  margin: 2px;
+  padding: 5px;
+  font-size: 1rem;
+
+  @media screen and (min-width: 850px) {
+    margin: 5px;
+    padding: 8px;
+    font-size: 2rem;
+  }
 `;
 
 const NavButton = props => <Button to={props.target}>{props.name}</Button>;

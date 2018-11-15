@@ -14,27 +14,33 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
+const Body = styled.div`
+  display: grid;
+`;
+
 const LinkStyled = styled(Link)`
   font-size: 1.5em;
 `
 export default function About() {
   return (
     <Layout>
-        
             <Container>
                 <Nav />
-                <SectionTitle title="Resources" />
-                <p>Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out these articles, videos and blog posts to learn more about the power of exercise to change your brain, your body and your life.</p>
+                <Body>
+                    <SectionTitle title="Resources" />
+                    <p>Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out these articles, videos and blog posts to learn more about the power of exercise to change your brain, your body and your life.</p>
 
-                <FeatureResource                        link='https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/' 
-                title="Depression, anxiety, OCD – running helped us beat them"
-                desc="This article features real runners who use the sport to manage significant mental health issues."
-                image={FeatureImg}
-                />
+                    <FeatureResource                        link='https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/' 
+                    title="Depression, anxiety, OCD – running helped us beat them"
+                    desc="This article features real runners who use the sport to manage significant mental health issues."
+                    image={FeatureImg}
+                    />
 
-                {resources.map((resource)=> {
-                    return <Resource link={resource.link} title={resource.title} desc={resource.desc}/>
-                })}
+                    {resources.map((resource)=> {
+                        return <Resource link={resource.link} title={resource.title} desc={resource.desc}/>
+                    })}
+
+                </Body>
                 
             </Container>
     </Layout>

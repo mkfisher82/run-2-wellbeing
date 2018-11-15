@@ -13,9 +13,8 @@ import Favicon from '../images/r2wb-favicon.png';
 
 const Page = styled.div`
   margin: 0px auto;
+  
 `;
-
-const Content = Page.extend``;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -56,9 +55,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header/>
-        <Content>
           {children}
-        </Content>
         <Footer />
       </Page>
     )}
