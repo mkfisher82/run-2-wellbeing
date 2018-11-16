@@ -124,7 +124,7 @@ function SalePrice(props) {
     <div>
       <NormalPrice>Usually {props.price}</NormalPrice>
       <Price>Now {props.discountPrice}</Price>
-      <p>Only 3 remaining at this price</p>
+      <p>Only 2 remaining at this price</p>
     </div>
   );
 }

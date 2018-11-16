@@ -58,7 +58,7 @@ const aboutNicole = () => (
         </p>
         <p>
           Nicole has been an enthusiastic and passionate runner for over ten years. In that time she has completed too
-          many half marathons to count, 4 marathons and one ultra marathon. One day she would love to run the length of
+          many half marathons to count, 5 marathons and one ultra marathon. One day she would love to run the length of
           Aotearoa New Zealand. Nicole is an accredited running coach and loves to share her passion for the sport with
           her clients.
         </p>
