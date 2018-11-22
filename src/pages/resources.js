@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
-import FeatureImg from '../images/TheExerciseEffect.jpg';
+import FeatureImg from '../images/running-mum-life.jpg';
 
 const Container = styled.div`
   max-width: 960px;
@@ -22,13 +22,12 @@ export default function About() {
     <Layout>
         
             <Container>
-                <Nav />
                 <SectionTitle title="Resources" />
                 <p>Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out these articles, videos and blog posts to learn more about the power of exercise to change your brain, your body and your life.</p>
 
-                <FeatureResource                        link='https://www.apa.org/monitor/2011/12/exercise.aspx' 
-                title="The Exercise Effect"
-                desc="If you are keen to know the mechanisms of why exercise is so good for your mental health - check out this article from the American Psychological Association"
+                <FeatureResource                        link='/blog/running-mum-life' 
+                title="The Running Mum Life"
+                desc="Here arer my tips for getting out there and running when you have a young family."
                 image={FeatureImg}
                 />
 
@@ -42,6 +41,11 @@ export default function About() {
 }
 
 const resources = [
+    {
+        link:'https://www.apa.org/monitor/2011/12/exercise.aspx', 
+        title:"ARTICLE: The Exercise Effect",
+        desc:"If you are keen to know the mechanisms of why exercise is so good for your mental health - check out this article from the American Psychological Association."
+    },
     {
         link:'https://www.mentalhealthexcellence.org/depression-anxiety-ocd-running-helped-us-beat/', 
         title:"ARTICLE: Depression, anxiety, OCD – running helped us beat them",
