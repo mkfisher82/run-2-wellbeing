@@ -1,20 +1,6 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-function createCustomer(data) {
-  stripe.customers.create(
-    {
-      description: `Customer for ${data.token.email}`,
-      email: data.token.email,
-      source: data.token.id,
-    },
-    (err, customer) => {
-      console.log(customer);
-      return customer.id;
-    },
-  );
-}
-
 module.exports.handler = (event, context, callback) => {
   console.log('creating charge...');
 
@@ -22,10 +8,8 @@ module.exports.handler = (event, context, callback) => {
   //   console.log(event);
   const requestData = JSON.parse(event.body);
   // console.log(requestData);
-  const { email } = requestData.token;
+  const { amount } = requestData;
   const token = requestData.token.id;
-
-  console.log(email);
 
   // Headers to prevent CORS issues
   const headers = {
@@ -33,20 +17,27 @@ module.exports.handler = (event, context, callback) => {
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
-  return stripe.customers
-    .list({
-      email,
+  return stripe.charges
+    .create({
+      // Create Stripe charge with token
+      amount,
+      source: token,
+      currency: 'nzd',
+      description: 'Run 2 Wellbeing Total Wellness Package',
     })
-    .then(customers => {
-      let custID = '';
-      if (!customers.data[0]) {
-        custID = createCustomer(requestData);
-      } else {
-        custID = customers.data[0].id;
-      }
-      return custID;
+    .then(charge => {
+      // Success response
+      // console.log(charge);
+      const response = {
+        headers,
+        statusCode: 200,
+        body: JSON.stringify({
+          message: `Charge processed!`,
+          charge,
+        }),
+      };
+      callback(null, response);
     })
-    .then(custID => console.log(custID))
     .catch(err => {
       // Error response
       // console.log(err);

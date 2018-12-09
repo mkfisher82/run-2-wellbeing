@@ -1802,38 +1802,46 @@ __webpack_require__(98).config();
 
 const stripe = __webpack_require__(241)(process.env.STRIPE_SECRET_KEY);
 
+function createCustomer(data) {
+  stripe.customers.create({
+    description: `Customer for ${data.token.email}`,
+    email: data.token.email,
+    source: data.token.id
+  }, (err, customer) => {
+    console.log(customer);
+    return customer.id;
+  });
+}
+
 module.exports.handler = (event, context, callback) => {
-  console.log("creating charge..."); // Pull out the amount and id for the charge from the POST
+  console.log('creating charge...'); // Pull out the amount and id for the charge from the POST
   //   console.log(event);
 
   const requestData = JSON.parse(event.body); // console.log(requestData);
 
-  const amount = requestData.amount;
-  const token = requestData.token.id; // Headers to prevent CORS issues
+  const {
+    email
+  } = requestData.token;
+  const token = requestData.token.id;
+  console.log(email); // Headers to prevent CORS issues
 
   const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type"
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
   };
-  return stripe.charges.create({
-    // Create Stripe charge with token
-    amount,
-    source: token,
-    currency: "nzd",
-    description: "Run 2 Wellbeing Total Wellness Package"
-  }).then(charge => {
-    // Success response
-    // console.log(charge);
-    const response = {
-      headers,
-      statusCode: 200,
-      body: JSON.stringify({
-        message: `Charge processed!`,
-        charge
-      })
-    };
-    callback(null, response);
-  }).catch(err => {
+  return stripe.customers.list({
+    email
+  }).then(customers => {
+    let custID = '';
+
+    if (!customers.data[0]) {
+      custID = createCustomer(requestData);
+    } else {
+      custID = customers.data[0].id;
+    }
+
+    return custID;
+  }).then(custID => console.log(custID)).catch(err => {
     // Error response
     // console.log(err);
     const response = {
