@@ -1,18 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContactForm from '../components/contactForm';
-import ContactDetails from '../components/contactDetails';
-import SectionTitle from '../components/sectionTitle';
+import ContactForm from './contactForm';
+import ContactDetails from './contactDetails';
+import SectionTitle from './sectionTitle';
 
 const Container = styled.section`
   margin: 0px auto;
   max-width: 960px;
-  padding: 40px 5%;
+  padding: 0px 5%;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 850px) {
+    gird-template-columns: 1fr 1fr;
+  }
 `;
 
 const contact = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import FacebookIFrame from '../components/facebookIFrame';
+import FacebookIFrame from './facebookIFrame';
 
 import logo from '../images/run-2-well-being-logo-v3.svg';
 
@@ -26,16 +26,12 @@ const SiteLogo = styled.img`
   max-height: 50px;
 `;
 
-const FBIFrame = styled(FacebookIFrame)`
-  justify-self: right;
-`
-
 const Header = () => (
   <HeaderContainer>
-    <Link to="/">
+    {/* <Link to="/">
       <SiteLogo src={logo} alt="Run 2 Well-being Logo" />
     </Link>
-    <FacebookIFrame />
+    <FacebookIFrame /> */}
   </HeaderContainer>
 );
 

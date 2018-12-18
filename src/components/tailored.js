@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Title from '../components/sectionTitle';
-import SubSection from '../components/subSection';
+import Title from './sectionTitle';
+import SubSection from './subSection';
 
 const Container = styled.section`
   margin: 0px auto;
@@ -18,9 +18,11 @@ const HighlightText = styled.p`
 
 const SubSectionContainer = styled.div`
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 850px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 const tailored = () => {

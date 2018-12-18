@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Container = styled.section`
   position: relative;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 
   &:after {
     content: '';
@@ -38,7 +38,7 @@ const UescaLogo = styled.img`
   max-width: 200px;
   margin: 0px auto;
   display: block;
-`
+`;
 
 const aboutNicole = () => (
   <Container>
@@ -58,7 +58,7 @@ const aboutNicole = () => (
         </p>
         <p>
           Nicole has been an enthusiastic and passionate runner for over ten years. In that time she has completed too
-          many half marathons to count, 4 marathons and one ultra marathon. One day she would love to run the length of
+          many half marathons to count, 5 marathons and one ultra marathon. One day she would love to run the length of
           Aotearoa New Zealand. Nicole is an accredited running coach and loves to share her passion for the sport with
           her clients.
         </p>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterContainer = styled.div`
   text-align: center;
   background-color: lightgray;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 0px;
 `;
 

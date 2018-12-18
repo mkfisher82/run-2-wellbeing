@@ -1,45 +1,76 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const NavContainer = styled.div`
+import Logo from '../images/run-2-well-being-logo-v3.svg';
+import Bars from '../images/bars-solid.svg';
+import FB from './facebookIFrame';
+import NavList from './navList';
+
+const SiteLogo = styled.img`
+  padding: 5px 0;
+  margin: 0px;
+  max-height: 50px;
+  width: 100%;
+  grid-area: logo;
+`;
+
+const NavLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 1170px;
-  max-height: 100px;
-  margin: 0px auto;
-  padding: 20px 0;
-`;
+  grid-template-columns: 1fr 50px;
+  padding: 20px 5% 0px 5%;
+  margin: 0 auto;
+  align-items: center;
+  grid-gap: 10px 20px;
+  grid-template-areas:
+    'logo menu'
+    'navlist navlist'
+    'FB FB';
 
-const ButtonGroup = styled.div`
-  justify-self: center;
-  align-self: center;
-`;
-
-const Button = styled(Link)`
-  margin: 2px;
-  padding: 5px;
-  font-size: 1rem;
-
-  @media screen and (min-width: 850px) {
-    margin: 5px;
-    padding: 8px;
-    font-size: 2rem;
+  @media (min-width: 540px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'logo FB'
+      'navlist navlist';
   }
 `;
 
-const NavButton = props => <Button to={props.target}>{props.name}</Button>;
+const Button = styled.button`
+  background: #ffffff;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  grid-area: menu;
 
-const Nav = () => (
-  <NavContainer>
-    <ButtonGroup>
-      <NavButton target="#programme" name="Programme" />
-      <NavButton target="#pricing" name="Pricing" />
-      <NavButton target="/resources" name="Resources" />
-      <NavButton target="#about" name="About" />
-      <NavButton target="#contact" name="Contact" />
-    </ButtonGroup>
-  </NavContainer>
-);
+  @media (min-width: 540px) {
+    display: none;
+  }
+`;
+
+class Nav extends Component {
+  state = {
+    menuOpen: false,
+  };
+
+  toggleMenu = () => {
+    this.setState(({ menuOpen }) => {
+      return { menuOpen: !menuOpen };
+    });
+  };
+
+  render() {
+    const { menuOpen } = this.state;
+
+    return (
+      <NavLayout>
+        <SiteLogo src={Logo} alt="Run 2 Wellbeing Logo" />
+        <Button onClick={this.toggleMenu}>
+          <img src={Bars} width="20px" height="20px" alt="Menu" />
+        </Button>
+        <NavList menuOpen={menuOpen} />
+        <FB />
+      </NavLayout>
+    );
+  }
+}
 
 export default Nav;

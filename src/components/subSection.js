@@ -1,18 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SubHeading = styled.h3`
-  padding: 5px 0;
-`;
-const SubText = styled.p`
-  padding: 5px 0;
-`;
+const SubHeading = styled.h3``;
+const SubText = styled.p``;
 
-const subSection = props => {
+const subSection = ({ subHeading, subText }) => {
   return (
     <div>
-      <SubHeading>{props.subHeading}</SubHeading>
-      <SubText>{props.subText}</SubText>
+      <SubHeading>{subHeading}</SubHeading>
+      <SubText>{subText}</SubText>
     </div>
   );
 };

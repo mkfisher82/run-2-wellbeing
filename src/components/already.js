@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SectionTitle from '../components/sectionTitle';
-import SubSection from '../components/subSection';
+import SectionTitle from './sectionTitle';
+import SubSection from './subSection';
 
 const Container = styled.section`
   margin: 0px auto;
@@ -16,8 +16,6 @@ const HighlightText = styled.p`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
 `;
 
 const already = () => {

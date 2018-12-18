@@ -1,11 +1,11 @@
 require('dotenv').config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 module.exports.handler = (event, context, callback) => {
-  console.log("creating charge...");
+  console.log('creating charge...');
 
   // Pull out the amount and id for the charge from the POST
-//   console.log(event);
+  //   console.log(event);
   const requestData = JSON.parse(event.body);
   // console.log(requestData);
   const amount = requestData.amount;
@@ -13,8 +13,8 @@ module.exports.handler = (event, context, callback) => {
 
   // Headers to prevent CORS issues
   const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type"
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
   };
 
   return stripe.charges
@@ -22,8 +22,8 @@ module.exports.handler = (event, context, callback) => {
       // Create Stripe charge with token
       amount,
       source: token,
-      currency: "nzd",
-      description: "Run 2 Wellbeing Total Wellness Package"
+      currency: 'nzd',
+      description: 'Run 2 Wellbeing Total Wellness Package',
     })
     .then(charge => {
       // Success response
@@ -33,8 +33,8 @@ module.exports.handler = (event, context, callback) => {
         statusCode: 200,
         body: JSON.stringify({
           message: `Charge processed!`,
-          charge
-        })
+          charge,
+        }),
       };
       callback(null, response);
     })
@@ -45,8 +45,8 @@ module.exports.handler = (event, context, callback) => {
         headers,
         statusCode: 500,
         body: JSON.stringify({
-          error: err.message
-        })
+          error: err.message,
+        }),
       };
       callback(null, response);
     });

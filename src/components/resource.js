@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.a`
-  font-size: 1.25em;
   text-transform: uppercase;
   text-align: left;
   font-weight: 700;
@@ -10,14 +9,16 @@ const Title = styled.a`
 `;
 
 const Container = styled.div`
-    padding: 10px 5%;
-`
+  padding: 10px 5%;
+`;
 
-const resource = props => {
+const resource = ({ link, title, desc }) => {
   return (
     <Container>
-        <Title href={ props.link } target="_blank"> {props.title} </Title>
-        <p> { props.desc } </p>
+      <Title href={link} target="_blank">
+        {title}
+      </Title>
+      <p> {desc} </p>
     </Container>
   );
 };
