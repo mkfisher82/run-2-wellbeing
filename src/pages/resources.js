@@ -9,14 +9,15 @@ import FeatureImg from '../images/running-mum-life.jpg';
 
 const Container = styled.div`
   max-width: 960px;
+  padding: 0 5%;
   margin: 0 auto;
 `;
 
 export default function About() {
   return (
     <Layout>
+      <Nav />
       <Container>
-        <Nav />
         <SectionTitle title="Resources" />
         <p>
           Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out
