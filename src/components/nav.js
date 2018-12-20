@@ -10,8 +10,8 @@ const SiteLogo = styled.img`
   padding: 5px 0;
   margin: 0px;
   max-height: 50px;
-  width: 100%;
   grid-area: logo;
+  max-width: 100%;
 `;
 
 const NavLayout = styled.div`
@@ -21,6 +21,7 @@ const NavLayout = styled.div`
   margin: 0 auto;
   align-items: center;
   grid-gap: 10px 20px;
+  max-width: 1080px;
   grid-template-areas:
     'logo menu'
     'navlist navlist'
@@ -28,6 +29,7 @@ const NavLayout = styled.div`
 
   @media (min-width: 540px) {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 0 20px;
     grid-template-areas:
       'logo FB'
       'navlist navlist';

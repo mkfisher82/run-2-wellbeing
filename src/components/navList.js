@@ -14,7 +14,6 @@ const NavContainer = styled.ul`
   }
 
   > li {
-    font-size: 20px;
     padding: 5px;
     list-style: none;
     border-bottom: 1px solid #107a66;
@@ -28,11 +27,12 @@ const NavContainer = styled.ul`
     background: none;
     border-bottom: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 
     > li {
       display: inline;
       border-bottom: none;
+      justify-self: center;
     }
   }
 `;
@@ -40,12 +40,16 @@ const NavContainer = styled.ul`
 const Button = styled(Link)`
   margin: 2px;
   padding: 5px;
-  font-size: 1rem;
+  font-size: 1.25rem;
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 540px) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 860px) {
     margin: 5px;
     padding: 8px;
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 `;
 

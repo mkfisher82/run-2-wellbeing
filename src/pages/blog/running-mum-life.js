@@ -17,10 +17,9 @@ const Body = styled.p`
 `;
 const List = styled.ol`
   list-style-type: none;
-  li h3 {
-    font-size: 2rem;
-  }
+  padding: 0;
 `;
+
 const BlogImage = styled.img`
   margin: 0px auto;
   display: block;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: grid;
   padding: 10px 5%;
+  margin: 0;
 `;
 
 const Title = styled.a`
@@ -40,10 +41,11 @@ const resource = ({ link, image, title, desc }) => {
           <FeatureImg src={image} alt="Feature resource image" />
         </a>
         <div>
-          <Title href={link} target="_blank">
-            {' '}
-            {title}{' '}
-          </Title>
+          <h3>
+            <Title href={link} target="_blank">
+              {title}
+            </Title>
+          </h3>
           <p> {desc} </p>
         </div>
       </Container>

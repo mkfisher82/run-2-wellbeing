@@ -9,7 +9,7 @@ const IFrame = styled.iframe`
   grid-area: FB;
   max-width: 95%;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 540px) {
     justify-self: right;
   }
 `;

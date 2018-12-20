@@ -9,12 +9,7 @@ import FeatureImg from '../images/running-mum-life.jpg';
 
 const Container = styled.div`
   max-width: 960px;
-  padding: 0 5%;
   margin: 0 auto;
-`;
-
-const Body = styled.div`
-  display: grid;
 `;
 
 export default function About() {
@@ -22,25 +17,23 @@ export default function About() {
     <Layout>
       <Container>
         <Nav />
-        <Body>
-          <SectionTitle title="Resources" />
-          <p>
-            Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out
-            these articles, videos and blog posts to learn more about the power of exercise to change your brain, your
-            body and your life.
-          </p>
+        <SectionTitle title="Resources" />
+        <p>
+          Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out
+          these articles, videos and blog posts to learn more about the power of exercise to change your brain, your
+          body and your life.
+        </p>
 
-          <FeatureResource
-            link="/blog/running-mum-life"
-            title="The Running Mum Life"
-            desc="Here arer my tips for getting out there and running when you have a young family."
-            image={FeatureImg}
-          />
+        <FeatureResource
+          link="/blog/running-mum-life"
+          title="The Running Mum Life"
+          desc="Here arer my tips for getting out there and running when you have a young family."
+          image={FeatureImg}
+        />
 
-          {resources.map(({ link, title, desc }) => {
-            return <Resource link={link} title={title} desc={desc} key={link} />;
-          })}
-        </Body>
+        {resources.map(({ link, title, desc }) => {
+          return <Resource link={link} title={title} desc={desc} key={link} />;
+        })}
       </Container>
     </Layout>
   );

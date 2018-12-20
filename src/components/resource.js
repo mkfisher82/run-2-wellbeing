@@ -15,9 +15,11 @@ const Container = styled.div`
 const resource = ({ link, title, desc }) => {
   return (
     <Container>
-      <Title href={link} target="_blank">
-        {title}
-      </Title>
+      <h3>
+        <Title href={link} target="_blank">
+          {title}
+        </Title>
+      </h3>
       <p> {desc} </p>
     </Container>
   );

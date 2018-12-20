@@ -16,6 +16,11 @@ const HighlightText = styled.p`
 
 const Wrapper = styled.div`
   display: grid;
+
+  @media (min-width: 850px) {
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const already = () => {
