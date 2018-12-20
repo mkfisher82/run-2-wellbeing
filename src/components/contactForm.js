@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding: 10px;
+  padding: 0px;
 `;
 
 const HoneyPot = styled.p`
@@ -14,25 +14,25 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 95%;
 `;
 
 const Textarea = styled.textarea`
-  width: 100%;
+  width: 95%;
 `;
 
 const Button = styled.button`
-    background-color: #107a66;
-    text-decoration: none;
-    font-size: 1em;
-    text-align: center;
-    color: #fff;
-    outline: none;
-    padding: 12px 60px;
-    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
-    border-radius: 6px;
-    letter-spacing: 1.5px;
-    display: block;
+  background-color: #107a66;
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+  color: #fff;
+  outline: none;
+  padding: 12px 60px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  letter-spacing: 1.5px;
+  display: block;
 `;
 
 const contactForm = () => {

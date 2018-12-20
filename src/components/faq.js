@@ -6,7 +6,7 @@ import Accordion from './accordion';
 const Container = styled.section`
   max-width: 960px;
   margin: 0px auto;
-  padding: 40px 5%;
+  padding: 20px 5%;
 `;
 
 const FAQ = () => (
