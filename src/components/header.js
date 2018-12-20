@@ -22,8 +22,12 @@ const HeaderContainer = styled.div`
 
 const SiteLogo = styled.img`
   padding: 5px;
-  margin: 0px;
+  max-width: 100%;
+    margin: 0px;
+  
+  @media screen and (min-width: 850px) {
   max-height: 50px;
+  }
 `;
 
 const Header = () => (

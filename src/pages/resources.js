@@ -32,6 +32,7 @@ export default function About() {
           image={FeatureImg}
         />
 
+
         {resources.map(({ link, title, desc }) => {
           return <Resource link={link} title={title} desc={desc} key={link} />;
         })}
