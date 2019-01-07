@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
 import Layout from '../../components/layout';
-// import Nav from '../../components/nav';
-=======
-
-import Layout from '../../components/layout';
-import Nav from '../../components/nav';
->>>>>>> 662ae0c994c8bd5a4aabd924498f19a90b497aa3
 import SectionTitle from '../../components/sectionTitle';
+import Nav from '../../components/nav';
 
 import RunningMumImg from '../../images/running-mum-life.jpg';
 
@@ -23,16 +17,10 @@ const Body = styled.p`
 `;
 const List = styled.ol`
   list-style-type: none;
-<<<<<<< HEAD
   li h3 {
     font-size: 2rem;
   }
 `;
-=======
-  padding: 0;
-`;
-
->>>>>>> 662ae0c994c8bd5a4aabd924498f19a90b497aa3
 const BlogImage = styled.img`
   margin: 0px auto;
   display: block;
@@ -41,10 +29,7 @@ const BlogImage = styled.img`
 export default function RunningMum() {
   return (
     <Layout>
-<<<<<<< HEAD
-=======
       <Nav />
->>>>>>> 662ae0c994c8bd5a4aabd924498f19a90b497aa3
       <Container>
         <SectionTitle title="The Running Mum Life" />
         <BlogImage src={RunningMumImg} width="100%" alt="Nicole running with her two boys." />
@@ -61,11 +46,7 @@ export default function RunningMum() {
             <Body>
               This is probably the biggest hurdle I see mums facing. Busy family life means that mum is rushing here and
               there, making sure everyone else is well looked after. But what about mum? I know, I know. You are busy.
-<<<<<<< HEAD
               Of course you are, isn’t everyone? But I’ll bet you still find time to make sure the kids get to their
-=======
-              Of course you are, isn’t everyone? But I’ll be you still find time to make sure the kids get to their
->>>>>>> 662ae0c994c8bd5a4aabd924498f19a90b497aa3
               activities, that the family has nutritious food to eat, appointments are booked and birthday parties
               attended? So why is it that your needs should be at the bottom of the family pile? A big mental leap for
               many mums is that they are important and even *gasp* that it is ok for other family members to have to

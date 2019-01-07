@@ -13,7 +13,7 @@ import Favicon from '../images/r2wb-favicon.png';
 
 const Page = styled.div`
   margin: 0px auto;
-  width: 100vw;
+  /* width: 100vw; */
 `;
 
 const Layout = ({ children }) => (

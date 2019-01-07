@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
+import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
@@ -15,6 +16,7 @@ const Container = styled.div`
 export default function About() {
   return (
     <Layout>
+      <Nav />
       <Container>
         <SectionTitle title="Resources" />
         <p>
