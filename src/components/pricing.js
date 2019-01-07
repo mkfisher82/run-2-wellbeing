@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import styled from 'styled-components';
+// import { relative } from 'path';
 import SectionTitle from './sectionTitle';
 import Package from './package';
 import Checkout from './checkout';
-import { relative } from 'path';
 
 const Container = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 
   &:after {
     content: '';
@@ -27,31 +27,31 @@ const Container = styled.section`
 `;
 
 const Button = styled.button`
-    background-color: #107a66;
-    opacity: 0.8;
-    text-decoration: none;
-    font-size: 1em;
-    text-align: center;
-    color: #fff;
-    outline: none;
-    padding: 12px 60px;
-    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
-    border-radius: 6px;
-    letter-spacing: 1.5px;
-    display: block;
-    margin: 20px auto;
+  background-color: #107a66;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+  color: #fff;
+  outline: none;
+  padding: 12px 60px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  letter-spacing: 1.5px;
+  display: block;
+  margin: 5px auto;
 `;
 
-
 const Preamble = styled.p`
-  font-size: 2rem;
+  /* font-size: 2rem; */
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  margin: 0;
 `;
 
 const Wrapper = styled.div`
@@ -61,18 +61,18 @@ const Wrapper = styled.div`
 `;
 
 const Cell = styled.div`
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 3px solid #e8e8e8;
   border-radius: 7px;
-`
+`;
 
 const pricing = () => (
   <Container>
     <Wrapper>
       <SectionTitle title="Pricing" />
       <Preamble>Select from one of our two great plans:</Preamble>
-        <Grid>
-          <Cell>
+      <Grid>
+        <Cell>
           <Package
             name="Starter"
             price="Free"
@@ -83,22 +83,17 @@ const pricing = () => (
               'Initial Skype Consulation (30mins)',
               '2 Week customised training programme',
               'Email and text message support',
-              'Limit one per person'
+              'Limit one per person',
             ]}
-            
           />
-            <Button onClick={() => location.href='/client'}> GET STARTED </Button>
-
-          
-          </Cell>
-          <Cell>
-
-
+          <Button onClick={() => (location.href = '/client')}> GET STARTED </Button>
+        </Cell>
+        <Cell>
           <Package
             name="Total Wellness"
             price="$280"
             discountPrice="$180"
-            onSale={true}
+            onSale
             period="12 Weeks"
             features={[
               'Initial Skype Consulation (up to 90mins)',
@@ -109,10 +104,8 @@ const pricing = () => (
             ]}
           />
           <Checkout />
-          </Cell>
-          
-        </Grid>
-      
+        </Cell>
+      </Grid>
     </Wrapper>
   </Container>
 );

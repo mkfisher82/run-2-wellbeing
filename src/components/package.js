@@ -5,10 +5,9 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  /* border: 3px solid #e8e8e8; */
   border-radius: 7px;
   display: block;
-  padding: 24px;
+  padding: 10px 24px;
   text-align: center;
   position: relative;
   background-color: white;
@@ -36,13 +35,18 @@ const ListItem = styled.li`
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
+
+  > p {
+    padding: 0;
+    margin: 5px;
+  }
 `;
 
 const Name = styled.div`
   color: #565656;
   font-weight: 300;
-  font-size: 3rem;
-  margin-top: -5px;
+  font-size: 2.25rem;
+  margin-top: 0px;
 `;
 
 const Price = styled.div`
@@ -67,7 +71,7 @@ const Period = styled.div`
   border-radius: 15px;
   background-color: white;
   position: relative;
-  bottom: -20px;
+  bottom: -25px;
 `;
 
 const FAIcon = styled(FontAwesomeIcon)`
@@ -75,17 +79,23 @@ const FAIcon = styled(FontAwesomeIcon)`
   display: inline-block;
 `;
 
-class Programme extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {onSale: this.props.onSale};
+const SalePriceContainer = styled.div`
+  > p {
+    margin: 10px;
   }
+`;
+
+class Programme extends React.Component {
+  state = {
+    onSale: this.props.onSale,
+  };
 
   render() {
-    let onSale = this.state.onSale;
+    let { onSale } = this.state;
     let displayPrice;
 
-    const features = this.props.features;
+    const { features, price, discountPrice, name, period } = this.props;
+
     const featureList = features.map(feature => (
       <ListItem key={feature.toString()}>
         <FAIcon size="lg" color="#107a66" icon={faCheck} />
@@ -94,37 +104,35 @@ class Programme extends React.Component {
     ));
 
     if (onSale) {
-      displayPrice = <SalePrice price={this.props.price} discountPrice={this.props.discountPrice} />
+      displayPrice = <SalePrice price={price} discountPrice={discountPrice} />;
     } else {
-      displayPrice = <RegularPrice price={this.props.price}/>
+      displayPrice = <RegularPrice price={price} />;
     }
-  
+
     return (
-        <Wrapper>
-          <Name>{this.props.name}</Name>
-          {displayPrice}
-          <Period>{this.props.period}</Period>
-          <hr />
-          <ul>{featureList}</ul>
-        </Wrapper>
+      <Wrapper>
+        <Name>{name}</Name>
+        {displayPrice}
+        <Period>{period}</Period>
+        <hr />
+        <ul>{featureList}</ul>
+      </Wrapper>
     );
   }
-};
+}
 
 export default Programme;
 
-function RegularPrice(props) {
-  return (
-    <Price>{props.price}</Price>
-  );
+function RegularPrice({ price }) {
+  return <Price>{price}</Price>;
 }
 
-function SalePrice(props) {
+function SalePrice({ price, discountPrice }) {
   return (
-    <div>
-      <NormalPrice>Usually {props.price}</NormalPrice>
-      <Price>Now {props.discountPrice}</Price>
+    <SalePriceContainer>
+      <NormalPrice>Usually {price}</NormalPrice>
+      <Price>Now {discountPrice}</Price>
       <p>Only 2 remaining at this price</p>
-    </div>
+    </SalePriceContainer>
   );
 }
