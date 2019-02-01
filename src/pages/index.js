@@ -15,19 +15,23 @@ import MountainRunner from '../images/kalen-emsley-99660-unsplash-c_scale,w_1920
 
 const Body = styled.div`
   display: grid;
+  width: 100%;
 `;
 
 const MainImage = styled.img`
   max-width: 100%;
-  max-height: 100%;
+  max-height: 300px;
   justify-self: center;
   object-fit: cover;
   margin-top: 16px;
+  @media screen and (min-width: 850px) {
+    max-height: 100%;
+  }
 `;
 
 const UseRunning = styled.h2`
   text-align: center;
-  font-size: 2.5rem;
+  /* font-size: 2rem; */
   margin: 0px auto;
   max-width: 960px;
   padding: 40px 5%;

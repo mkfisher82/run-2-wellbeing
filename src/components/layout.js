@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
+// import Header from './header';
 import Footer from './footer';
 import './style.scss';
 import './normalise.scss';
@@ -13,9 +13,8 @@ import Favicon from '../images/r2wb-favicon.png';
 
 const Page = styled.div`
   margin: 0px auto;
+  /* width: 100vw; */
 `;
-
-const Content = Page.extend``;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -64,8 +63,8 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header />
-        <Content>{children}</Content>
+        {/* <Header /> */}
+        {children}
         <Footer />
       </Page>
     )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.section`
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.h4`
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
   padding: 20px 0;
@@ -36,18 +36,18 @@ const Text = styled.h4`
 `;
 
 const Button = styled.button`
-    background-color: #107a66;
-    text-decoration: none;
-    font-size: 1.75em;
-    text-align: center;
-    color: #fff;
-    outline: none;
-    padding: 12px 60px;
-    box-shadow: 2px 5px 10px rgba(0,0,0,.1);
-    border-radius: 6px;
-    letter-spacing: 1.5px;
-    display: block;
-    margin: 20px auto;
+  background-color: #107a66;
+  text-decoration: none;
+  font-size: 1.25em;
+  text-align: center;
+  color: #fff;
+  outline: none;
+  padding: 12px 60px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  letter-spacing: 1.5px;
+  display: block;
+  margin: 20px auto;
 `;
 
 const callToAction = () => {
@@ -55,7 +55,7 @@ const callToAction = () => {
     <Container>
       <Wrapper>
         <Text> Get started for free today!</Text>
-        <Button onClick={() => location.href='https://www.run2wellbeing.co.nz/#pricing'}> Go To Pricing </Button>
+        <Button onClick={() => (location.href = 'https://www.run2wellbeing.co.nz/#pricing')}> Go To Pricing </Button>
       </Wrapper>
     </Container>
   );

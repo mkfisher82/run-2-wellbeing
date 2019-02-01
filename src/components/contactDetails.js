@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding: 10px;
+  padding: 0px;
 `;
-
 
 const contactDetails = () => {
   return (
@@ -22,7 +21,7 @@ const contactDetails = () => {
         <br />
         4112
       </address>
-      
+
       <p>
         <strong>Phone:</strong>
       </p>

@@ -16,12 +16,12 @@ const Button = styled.button`
   background-color: #107a66;
   border-radius: 6px;
   letter-spacing: 1.5px;
-  margin: 0 auto;
+  margin: 10px auto;
   display: block;
 `;
 
 const Container = styled.div`
-  margin: 20px auto;
+  margin: 0px auto;
 `;
 
 // Below is where the checkout component is defined.
@@ -84,15 +84,17 @@ const Checkout = class extends React.Component {
   }
 
   render() {
+    const { disabled, buttonText, paymentMessage } = this.state;
+
     return (
       <Container>
         <Button
           onClick={event => this.openStripeCheckout(event)}
-          disabled={this.state.disabled}
+          disabled={disabled}
         >
-          {this.state.buttonText}
+          {buttonText}
         </Button>
-        {this.state.paymentMessage}
+        {paymentMessage}
       </Container>
     );
   }

@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { relative } from 'path';
 import SectionTitle from './sectionTitle';
 import Package from './package';
 import SubscriptionCheckout from './subscriptionCheckout';
 import OneOffCheckout from './oneOffCheckout';
+=======
+// import { relative } from 'path';
+import SectionTitle from './sectionTitle';
+import Package from './package';
+import Checkout from './checkout';
+>>>>>>> master
 
 const Container = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 
   &:after {
     content: '';
@@ -40,18 +47,27 @@ const Button = styled.button`
   border-radius: 6px;
   letter-spacing: 1.5px;
   display: block;
+<<<<<<< HEAD
   margin: 20px auto;
+=======
+  margin: 5px auto;
+>>>>>>> master
 `;
 
 const Preamble = styled.p`
-  font-size: 2rem;
+  /* font-size: 2rem; */
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 `;
 const Grid = styled.div`
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+=======
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+>>>>>>> master
   grid-gap: 20px;
+  margin: 0;
 `;
 
 const Wrapper = styled.div`
@@ -86,10 +102,7 @@ const pricing = () => (
               'Limit one per person',
             ]}
           />
-          <Button onClick={() => (location.href = '/client')}>
-            {' '}
-            GET STARTED{' '}
-          </Button>
+          <Button onClick={() => (location.href = '/client')}> GET STARTED </Button>
         </Cell>
         <Cell>
           <Package

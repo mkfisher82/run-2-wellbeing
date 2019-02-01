@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const Container = styled.section`
   position: relative;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
 
   &:after {
     content: '';
@@ -38,7 +38,7 @@ const UescaLogo = styled.img`
   max-width: 200px;
   margin: 0px auto;
   display: block;
-`
+`;
 
 const aboutNicole = () => (
   <Container>
