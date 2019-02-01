@@ -78,11 +78,11 @@ const FAIcon = styled(FontAwesomeIcon)`
 class Programme extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {onSale: this.props.onSale};
+    this.state = { onSale: this.props.onSale };
   }
 
   render() {
-    let onSale = this.state.onSale;
+    const onSale = this.state.onSale;
     let displayPrice;
 
     const features = this.props.features;
@@ -94,29 +94,32 @@ class Programme extends React.Component {
     ));
 
     if (onSale) {
-      displayPrice = <SalePrice price={this.props.price} discountPrice={this.props.discountPrice} />
+      displayPrice = (
+        <SalePrice
+          price={this.props.price}
+          discountPrice={this.props.discountPrice}
+        />
+      );
     } else {
-      displayPrice = <RegularPrice price={this.props.price}/>
+      displayPrice = <RegularPrice price={this.props.price}  />;
     }
-  
+
     return (
-        <Wrapper>
-          <Name>{this.props.name}</Name>
-          {displayPrice}
-          <Period>{this.props.period}</Period>
-          <hr />
-          <ul>{featureList}</ul>
-        </Wrapper>
+      <Wrapper>
+        <Name>{this.props.name}</Name>
+        {displayPrice}
+        <Period>{this.props.period}</Period>
+        <hr />
+        <ul>{featureList}</ul>
+      </Wrapper>
     );
   }
-};
+}
 
 export default Programme;
 
 function RegularPrice(props) {
-  return (
-    <Price>{props.price}</Price>
-  );
+  return <Price>{props.price}</Price>;
 }
 
 function SalePrice(props) {

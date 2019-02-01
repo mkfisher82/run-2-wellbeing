@@ -1,22 +1,8 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-function createCustomer(data) {
-  stripe.customers.create(
-    {
-      description: `Customer for ${data.token.email}`,
-      email: data.token.email,
-      source: data.token.id,
-    },
-    (err, customer) => {
-      console.log(customer);
-      return customer.id;
-    },
-  );
-}
-
 module.exports.handler = (event, context, callback) => {
-  console.log('creating charge...');
+  console.log('creating Subscription...');
 
   // Pull out the amount and id for the charge from the POST
   //   console.log(event);
@@ -25,8 +11,6 @@ module.exports.handler = (event, context, callback) => {
   const { email } = requestData.token;
   const token = requestData.token.id;
 
-  console.log(email);
-
   // Headers to prevent CORS issues
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -34,19 +18,34 @@ module.exports.handler = (event, context, callback) => {
   };
 
   return stripe.customers
-    .list({
+    .create({
+      description: `Customer for ${email}`,
       email,
+      source: token,
     })
-    .then(customers => {
-      let custID = '';
-      if (!customers.data[0]) {
-        custID = createCustomer(requestData);
-      } else {
-        custID = customers.data[0].id;
-      }
-      return custID;
+    .then(custID => {
+      console.log(`This is custID: ${custID.id}`);
+      stripe.subscriptions.create({
+        customer: custID.id,
+        items: [
+          {
+            plan: 'fortnightlypaymentplan',
+          },
+        ],
+      });
     })
-    .then(custID => console.log(custID))
+    .then(subscription => {
+      // Success response
+      const response = {
+        headers,
+        statusCode: 200,
+        body: JSON.stringify({
+          message: `Subscription Created!`,
+          subscription,
+        }),
+      };
+      callback(null, response);
+    })
     .catch(err => {
       // Error response
       // console.log(err);

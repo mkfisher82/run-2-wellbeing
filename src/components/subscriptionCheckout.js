@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // hardcoded amount (in US cents) to charge users
 // you could set this variable dynamically to charge different amounts
-const amount = 18000;
+const amount = 5000;
 
 const Button = styled.button`
   font-size: 1.25em;
@@ -54,10 +54,10 @@ const Checkout = class extends React.Component {
     this.stripeHandler.open({
       name: 'Run 2 Wellbeing',
       amount,
-      description: 'Total Wellness Package',
+      description: 'Ongoing Wellness Package',
       token: token => {
         // fetch(`.netlify/functions/checkout`, {
-        fetch(`http://localhost:9000/checkout.js`, {
+        fetch(`http://localhost:9000/subscriptionCheckout.js`, {
           method: 'POST',
           mode: 'no-cors',
           body: JSON.stringify({
