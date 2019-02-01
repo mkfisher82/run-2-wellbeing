@@ -5,7 +5,7 @@ import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
-import FeatureImg from '../images/running-mum-life.jpg';
+import FeatureImg from '../images/39Degrees.jpg';
 
 const Container = styled.div`
   max-width: 960px;
@@ -26,9 +26,9 @@ export default function About() {
         </p>
 
         <FeatureResource
-          link="/blog/running-mum-life"
-          title="The Running Mum Life"
-          desc="Here are my tips for getting out there and running when you have a young family."
+          link="/blog/dont-despair-the-tough-runs"
+          title="Don't Despair the Tough Runs"
+          desc="Finding running tough in the heat of summer? Use self talk to turn the tough runs into great training"
           image={FeatureImg}
         />
 
@@ -41,6 +41,11 @@ export default function About() {
 }
 
 const resources = [
+  {
+    link: '/blog/running-mum-life',
+    title: 'Blog: The Running Mum Life',
+    desc: 'Here are my tips for getting out there and running when you have a young family.',
+  },
   {
     link: 'https://www.apa.org/monitor/2011/12/exercise.aspx',
     title: 'ARTICLE: The Exercise Effect',

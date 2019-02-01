@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import { Link } from 'gatsby';
 import Logo from '../images/run-2-well-being-logo-v3.svg';
 import Bars from '../images/bars-solid.svg';
 import FB from './facebookIFrame';
@@ -64,7 +64,9 @@ class Nav extends Component {
 
     return (
       <NavLayout>
-        <SiteLogo src={Logo} alt="Run 2 Wellbeing Logo" />
+        <Link to="/">
+          <SiteLogo src={Logo} alt="Run 2 Well-being Logo" />
+        </Link>
         <Button onClick={this.toggleMenu}>
           <img src={Bars} width="20px" height="20px" alt="Menu" />
         </Button>
