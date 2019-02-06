@@ -132,7 +132,7 @@ function SalePrice({ price, discountPrice }) {
     <SalePriceContainer>
       <NormalPrice>Usually {price}</NormalPrice>
       <Price>Now {discountPrice}</Price>
-      <p>Only 2 remaining at this price</p>
+      <p>Only 1 remaining at this price</p>
     </SalePriceContainer>
   );
 }

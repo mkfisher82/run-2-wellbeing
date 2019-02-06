@@ -1,7 +1,6 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { relative } from 'path';
 import SectionTitle from './sectionTitle';
 import Package from './package';
 import SubscriptionCheckout from './subscriptionCheckout';

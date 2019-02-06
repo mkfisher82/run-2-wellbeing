@@ -56,8 +56,8 @@ const Checkout = class extends React.Component {
       amount,
       description: 'Total Wellness Package',
       token: token => {
-        // fetch(`.netlify/functions/checkout`, {
-        fetch(`http://localhost:9000/oneOffCheckout.js`, {
+        fetch(`.netlify/functions/oneOffCheckout`, {
+          // fetch(`http://localhost:9000/oneOffCheckout.js`, {
           method: 'POST',
           mode: 'no-cors',
           body: JSON.stringify({
