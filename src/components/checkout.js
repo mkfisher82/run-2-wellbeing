@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // hardcoded amount (in US cents) to charge users
 // you could set this variable dynamically to charge different amounts
-const amount = 18000;
+const amount = 28000;
 
 const Button = styled.button`
   font-size: 1.25em;
