@@ -96,7 +96,7 @@ const pricing = () => (
             name="Total Wellness"
             price="$280"
             discountPrice="$180"
-            onSale
+            onSale={false}
             period="12 Weeks"
             features={[
               'Initial Skype Consulation (up to 90mins)',
