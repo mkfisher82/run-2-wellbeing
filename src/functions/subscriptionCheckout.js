@@ -4659,10 +4659,8 @@ const stripe = __webpack_require__(240)(process.env.STRIPE_SECRET_KEY);
 
 module.exports.handler = (event, context, callback) => {
   console.log('creating Subscription...'); // Pull out the amount and id for the charge from the POST
-  //   console.log(event);
 
-  const requestData = JSON.parse(event.body); // console.log(requestData);
-
+  const requestData = JSON.parse(event.body);
   const {
     email
   } = requestData.token;
