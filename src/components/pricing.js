@@ -1,10 +1,10 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 import styled from 'styled-components';
-// import { relative } from 'path';
 import SectionTitle from './sectionTitle';
 import Package from './package';
-import Checkout from './checkout';
+import SubscriptionCheckout from './subscriptionCheckout';
+import OneOffCheckout from './oneOffCheckout';
 
 const Container = styled.section`
   position: relative;
@@ -49,13 +49,13 @@ const Preamble = styled.p`
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   margin: 0;
 `;
 
 const Wrapper = styled.div`
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 5%;
 `;
@@ -70,7 +70,7 @@ const pricing = () => (
   <Container>
     <Wrapper>
       <SectionTitle title="Pricing" />
-      <Preamble>Select from one of our two great plans:</Preamble>
+      <Preamble>Select from one of our three great plans:</Preamble>
       <Grid>
         <Cell>
           <Package
@@ -86,7 +86,10 @@ const pricing = () => (
               'Limit one per person',
             ]}
           />
-          <Button onClick={() => (location.href = '/client')}> GET STARTED </Button>
+          <Button onClick={() => (location.href = '/client')}>
+            {' '}
+            GET STARTED{' '}
+          </Button>
         </Cell>
         <Cell>
           <Package
@@ -103,7 +106,21 @@ const pricing = () => (
               'Access to the Run 2 Wellbeing closed Facebook support group',
             ]}
           />
-          <Checkout />
+          <OneOffCheckout />
+        </Cell>
+        <Cell>
+          <Package
+            name="Ongoing Wellness"
+            price="$50"
+            period="2 Weeks"
+            features={[
+              'All the features of our Total Wellness Package',
+              'A new training programme sent to you every 2 weeks',
+              'Small fortnightly payments',
+              'Continue the program only for as long as you need to',
+            ]}
+          />
+          <SubscriptionCheckout />
         </Cell>
       </Grid>
     </Wrapper>

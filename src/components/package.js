@@ -91,7 +91,7 @@ class Programme extends React.Component {
   };
 
   render() {
-    let { onSale } = this.state;
+    const { onSale } = this.state;
     let displayPrice;
 
     const { features, price, discountPrice, name, period } = this.props;
@@ -132,7 +132,7 @@ function SalePrice({ price, discountPrice }) {
     <SalePriceContainer>
       <NormalPrice>Usually {price}</NormalPrice>
       <Price>Now {discountPrice}</Price>
-      <p>Only 2 remaining at this price</p>
+      <p>Only 1 remaining at this price</p>
     </SalePriceContainer>
   );
 }

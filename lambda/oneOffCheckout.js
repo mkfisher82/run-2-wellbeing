@@ -8,7 +8,7 @@ module.exports.handler = (event, context, callback) => {
   //   console.log(event);
   const requestData = JSON.parse(event.body);
   // console.log(requestData);
-  const amount = requestData.amount;
+  const { amount } = requestData;
   const token = requestData.token.id;
 
   // Headers to prevent CORS issues

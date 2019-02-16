@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // hardcoded amount (in US cents) to charge users
 // you could set this variable dynamically to charge different amounts
-const amount = 28000;
+const amount = 5000;
 
 const Button = styled.button`
   font-size: 1.25em;
@@ -16,12 +16,12 @@ const Button = styled.button`
   background-color: #107a66;
   border-radius: 6px;
   letter-spacing: 1.5px;
-  margin: 10px auto;
+  margin: 0 auto;
   display: block;
 `;
 
 const Container = styled.div`
-  margin: 0px auto;
+  margin: 20px auto;
 `;
 
 // Below is where the checkout component is defined.
@@ -36,8 +36,8 @@ const Checkout = class extends React.Component {
   componentDidMount() {
     this.stripeHandler = window.StripeCheckout.configure({
       // You’ll need to add your own Stripe public key to the `checkout.js` file.
-      // key: 'pk_test_STRIPE_PUBLISHABLE_KEY',
-      key: 'pk_live_rt726IttwFKmfmTFfmTSSh8e',
+      key: 'pk_test_zUnLJRPWqAc3PC3hfbRiHRrX',
+      // key: 'pk_live_rt726IttwFKmfmTFfmTSSh8e',
       closed: () => {
         this.resetButton();
       },
@@ -47,15 +47,17 @@ const Checkout = class extends React.Component {
   resetButton() {
     this.setState({ disabled: false, buttonText: 'BUY NOW' });
   }
+
   openStripeCheckout(event) {
     event.preventDefault();
     this.setState({ disabled: true, buttonText: 'WAITING...' });
     this.stripeHandler.open({
       name: 'Run 2 Wellbeing',
-      amount: amount,
-      description: 'Total Wellness Package',
+      amount,
+      description: 'Ongoing Wellness Package',
       token: token => {
-        fetch(`.netlify/functions/checkout`, {
+        fetch(`.netlify/functions/subscriptionCheckout`, {
+          // fetch(`http://localhost:9000/subscriptionCheckout.js`, {
           method: 'POST',
           mode: 'no-cors',
           body: JSON.stringify({
@@ -82,14 +84,15 @@ const Checkout = class extends React.Component {
   }
 
   render() {
-    const { disabled, buttonText, paymentMessage } = this.state;
-
     return (
       <Container>
-        <Button onClick={event => this.openStripeCheckout(event)} disabled={disabled}>
-          {buttonText}
+        <Button
+          onClick={event => this.openStripeCheckout(event)}
+          disabled={this.state.disabled}
+        >
+          {this.state.buttonText}
         </Button>
-        {paymentMessage}
+        {this.state.paymentMessage}
       </Container>
     );
   }
