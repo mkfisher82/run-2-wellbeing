@@ -1,9 +1,9 @@
 // require('dotenv').config();
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const stripe = require('stripe')(process.env.STRIPE_TEST_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// const stripe = require('stripe')(process.env.STRIPE_TEST_KEY);
 
 module.exports.handler = (event, context, callback) => {
-  console.log('creating charge...');
+  console.log('creating one off charge...');
 
   // Pull out the amount and id for the charge from the POST
   //   console.log(event);
