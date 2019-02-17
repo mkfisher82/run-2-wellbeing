@@ -5,6 +5,7 @@ import SectionTitle from './sectionTitle';
 import Package from './package';
 import SubscriptionCheckout from './subscriptionCheckout';
 import OneOffCheckout from './oneOffCheckout';
+import ChallengeCheckout from './challengeCheckout';
 
 const Container = styled.section`
   position: relative;
@@ -49,7 +50,7 @@ const Preamble = styled.p`
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
   margin: 0;
 `;
@@ -70,7 +71,7 @@ const pricing = () => (
   <Container>
     <Wrapper>
       <SectionTitle title="Pricing" />
-      <Preamble>Select from one of our three great plans:</Preamble>
+      <Preamble>Select from one of our four great plans:</Preamble>
       <Grid>
         <Cell>
           <Package
@@ -121,6 +122,19 @@ const pricing = () => (
             ]}
           />
           <SubscriptionCheckout />
+        </Cell>
+        <Cell>
+          <Package
+            name="Mental Health Challenge"
+            price="$30"
+            period="30 Days"
+            features={[
+              'Email based, entirely online',
+              'Exclusively offered to clients currently under the care of a mental health professional',
+              'Learn to use running as a part of your mental health treatment plan',
+            ]}
+          />
+          <ChallengeCheckout />
         </Cell>
       </Grid>
     </Wrapper>

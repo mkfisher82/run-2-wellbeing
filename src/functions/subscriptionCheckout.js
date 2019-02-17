@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 308);
+/******/ 	return __webpack_require__(__webpack_require__.s = 309);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,12 +70,12 @@
 "use strict";
 
 
-var http = __webpack_require__(17);
-var https = __webpack_require__(22);
+var http = __webpack_require__(16);
+var https = __webpack_require__(21);
 var path = __webpack_require__(30);
 
-var utils = __webpack_require__(18);
-var Error = __webpack_require__(56);
+var utils = __webpack_require__(9);
+var Error = __webpack_require__(33);
 
 var hasOwn = {}.hasOwnProperty;
 
@@ -83,8 +83,8 @@ var hasOwn = {}.hasOwnProperty;
 StripeResource.extend = utils.protoExtend;
 
 // Expose method-creator & prepared (basic) methods
-StripeResource.method = __webpack_require__(103);
-StripeResource.BASIC_METHODS = __webpack_require__(247);
+StripeResource.method = __webpack_require__(61);
+StripeResource.BASIC_METHODS = __webpack_require__(113);
 
 /**
  * Encapsulates request logic for a Stripe Resource
@@ -394,100 +394,19 @@ module.exports = require("crypto");
 /* 6 */,
 /* 7 */,
 /* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* eslint-disable node/no-deprecated-api */
-var buffer = __webpack_require__(37)
-var Buffer = buffer.Buffer
-
-// alternative to using Object.keys for old browsers
-function copyProps (src, dst) {
-  for (var key in src) {
-    dst[key] = src[key]
-  }
-}
-if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = buffer
-} else {
-  // Copy properties from require('buffer')
-  copyProps(buffer, exports)
-  exports.Buffer = SafeBuffer
-}
-
-function SafeBuffer (arg, encodingOrOffset, length) {
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-// Copy static methods from Buffer
-copyProps(Buffer, SafeBuffer)
-
-SafeBuffer.from = function (arg, encodingOrOffset, length) {
-  if (typeof arg === 'number') {
-    throw new TypeError('Argument must not be a number')
-  }
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-SafeBuffer.alloc = function (size, fill, encoding) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  var buf = Buffer(size)
-  if (fill !== undefined) {
-    if (typeof encoding === 'string') {
-      buf.fill(fill, encoding)
-    } else {
-      buf.fill(fill)
-    }
-  } else {
-    buf.fill(0)
-  }
-  return buf
-}
-
-SafeBuffer.allocUnsafe = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return Buffer(size)
-}
-
-SafeBuffer.allocUnsafeSlow = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return buffer.SlowBuffer(size)
-}
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = require("http");
-
-/***/ }),
-/* 18 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Buffer = __webpack_require__(16).Buffer;
-var EventEmitter = __webpack_require__(38).EventEmitter;
-var qs = __webpack_require__(243);
+var Buffer = __webpack_require__(10).Buffer;
+var EventEmitter = __webpack_require__(31).EventEmitter;
+var qs = __webpack_require__(109);
 var crypto = __webpack_require__(2);
 
 var hasOwn = {}.hasOwnProperty;
-var isPlainObject = __webpack_require__(102);
+var isPlainObject = __webpack_require__(60);
 
 var OPTIONS_KEYS = ['api_key', 'idempotency_key', 'stripe_account', 'stripe_version'];
 
@@ -733,15 +652,96 @@ function emitWarning(warning) {
 
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* eslint-disable node/no-deprecated-api */
+var buffer = __webpack_require__(32)
+var Buffer = buffer.Buffer
+
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+  module.exports = buffer
+} else {
+  // Copy properties from require('buffer')
+  copyProps(buffer, exports)
+  exports.Buffer = SafeBuffer
+}
+
+function SafeBuffer (arg, encodingOrOffset, length) {
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer)
+
+SafeBuffer.from = function (arg, encodingOrOffset, length) {
+  if (typeof arg === 'number') {
+    throw new TypeError('Argument must not be a number')
+  }
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.alloc = function (size, fill, encoding) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  var buf = Buffer(size)
+  if (fill !== undefined) {
+    if (typeof encoding === 'string') {
+      buf.fill(fill, encoding)
+    } else {
+      buf.fill(fill)
+    }
+  } else {
+    buf.fill(0)
+  }
+  return buf
+}
+
+SafeBuffer.allocUnsafe = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return Buffer(size)
+}
+
+SafeBuffer.allocUnsafeSlow = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return buffer.SlowBuffer(size)
+}
+
+
+/***/ }),
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("http");
+
+/***/ }),
+/* 17 */,
+/* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
+/* 22 */,
 /* 23 */,
 /* 24 */,
 /* 25 */,
@@ -755,48 +755,25 @@ module.exports = require("https");
 module.exports = require("path");
 
 /***/ }),
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */
-/***/ (function(module, exports) {
-
-module.exports = require("buffer");
-
-/***/ }),
-/* 38 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("events");
 
 /***/ }),
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = require("buffer");
+
+/***/ }),
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(18);
+var utils = __webpack_require__(9);
 
 module.exports = _Error;
 
@@ -872,49 +849,30 @@ _Error.StripeIdempotencyError = StripeError.extend({type: 'StripeIdempotencyErro
 
 
 /***/ }),
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1025,7 +983,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 100 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1234,7 +1192,7 @@ exports.isBuffer = function isBuffer(obj) {
 
 
 /***/ }),
-/* 101 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1259,7 +1217,7 @@ module.exports = {
 
 
 /***/ }),
-/* 102 */
+/* 60 */
 /***/ (function(module, exports) {
 
 /**
@@ -1404,15 +1362,15 @@ module.exports = isPlainObject;
 
 
 /***/ }),
-/* 103 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(18);
-var makeRequest = __webpack_require__(104);
-var makeAutoPaginationMethods = __webpack_require__(246).makeAutoPaginationMethods;
+var utils = __webpack_require__(9);
+var makeRequest = __webpack_require__(62);
+var makeAutoPaginationMethods = __webpack_require__(112).makeAutoPaginationMethods;
 
 /**
  * Create an API method from the declared spec.
@@ -1450,13 +1408,13 @@ module.exports = stripeMethod;
 
 
 /***/ }),
-/* 104 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(18);
+var utils = __webpack_require__(9);
 var OPTIONAL_REGEX = /^optional!/;
 
 function getRequestOpts(self, requestArgs, spec, overrideData) {
@@ -1570,141 +1528,49 @@ module.exports = makeRequest;
 
 
 /***/ }),
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1716,9 +1582,9 @@ Stripe.DEFAULT_BASE_PATH = '/v1/';
 Stripe.DEFAULT_API_VERSION = null;
 
 // Use node's default timeout:
-Stripe.DEFAULT_TIMEOUT = __webpack_require__(17).createServer().timeout;
+Stripe.DEFAULT_TIMEOUT = __webpack_require__(16).createServer().timeout;
 
-Stripe.PACKAGE_VERSION = __webpack_require__(240).version;
+Stripe.PACKAGE_VERSION = __webpack_require__(106).version;
 
 Stripe.USER_AGENT = {
   bindings_version: Stripe.PACKAGE_VERSION,
@@ -1733,79 +1599,79 @@ Stripe.USER_AGENT_SERIALIZED = null;
 
 var APP_INFO_PROPERTIES = ['name', 'version', 'url'];
 
-var EventEmitter = __webpack_require__(38).EventEmitter;
-var exec = __webpack_require__(241).exec;
+var EventEmitter = __webpack_require__(31).EventEmitter;
+var exec = __webpack_require__(107).exec;
 
-var resourceNamespace = __webpack_require__(242);
+var resourceNamespace = __webpack_require__(108);
 
 var resources = {
   // Support Accounts for consistency, Account for backwards compat
-  Account: __webpack_require__(99),
-  Accounts: __webpack_require__(99),
-  ApplePayDomains: __webpack_require__(248),
-  ApplicationFees: __webpack_require__(249),
-  Balance: __webpack_require__(250),
-  BitcoinReceivers: __webpack_require__(251),
-  Charges: __webpack_require__(252),
-  CountrySpecs: __webpack_require__(253),
-  Coupons: __webpack_require__(254),
-  Customers: __webpack_require__(255),
-  Disputes: __webpack_require__(256),
-  EphemeralKeys: __webpack_require__(257),
-  Events: __webpack_require__(258),
-  ExchangeRates: __webpack_require__(259),
-  Files: __webpack_require__(260),
-  FileLinks: __webpack_require__(262),
-  InvoiceItems: __webpack_require__(263),
-  Invoices: __webpack_require__(264),
-  IssuerFraudRecords: __webpack_require__(265),
-  LoginLinks: __webpack_require__(266),
-  OrderReturns: __webpack_require__(267),
-  Orders: __webpack_require__(268),
-  PaymentIntents: __webpack_require__(269),
-  Payouts: __webpack_require__(270),
-  Plans: __webpack_require__(271),
-  Products: __webpack_require__(272),
-  RecipientCards: __webpack_require__(273),
-  Recipients: __webpack_require__(274),
-  Refunds: __webpack_require__(275),
-  Skus: __webpack_require__(276),
-  Sources: __webpack_require__(277),
-  SubscriptionItems: __webpack_require__(278),
-  Subscriptions: __webpack_require__(279),
-  ThreeDSecure: __webpack_require__(280),
-  Tokens: __webpack_require__(281),
-  Topups: __webpack_require__(282),
-  Transfers: __webpack_require__(283),
-  UsageRecords: __webpack_require__(284),
-  UsageRecordSummaries: __webpack_require__(285),
+  Account: __webpack_require__(57),
+  Accounts: __webpack_require__(57),
+  ApplePayDomains: __webpack_require__(114),
+  ApplicationFees: __webpack_require__(115),
+  Balance: __webpack_require__(116),
+  BitcoinReceivers: __webpack_require__(117),
+  Charges: __webpack_require__(118),
+  CountrySpecs: __webpack_require__(119),
+  Coupons: __webpack_require__(120),
+  Customers: __webpack_require__(121),
+  Disputes: __webpack_require__(122),
+  EphemeralKeys: __webpack_require__(123),
+  Events: __webpack_require__(124),
+  ExchangeRates: __webpack_require__(125),
+  Files: __webpack_require__(126),
+  FileLinks: __webpack_require__(128),
+  InvoiceItems: __webpack_require__(129),
+  Invoices: __webpack_require__(130),
+  IssuerFraudRecords: __webpack_require__(131),
+  LoginLinks: __webpack_require__(132),
+  OrderReturns: __webpack_require__(133),
+  Orders: __webpack_require__(134),
+  PaymentIntents: __webpack_require__(135),
+  Payouts: __webpack_require__(136),
+  Plans: __webpack_require__(137),
+  Products: __webpack_require__(138),
+  RecipientCards: __webpack_require__(139),
+  Recipients: __webpack_require__(140),
+  Refunds: __webpack_require__(141),
+  Skus: __webpack_require__(142),
+  Sources: __webpack_require__(143),
+  SubscriptionItems: __webpack_require__(144),
+  Subscriptions: __webpack_require__(145),
+  ThreeDSecure: __webpack_require__(146),
+  Tokens: __webpack_require__(147),
+  Topups: __webpack_require__(148),
+  Transfers: __webpack_require__(149),
+  UsageRecords: __webpack_require__(150),
+  UsageRecordSummaries: __webpack_require__(151),
 
   // The following rely on pre-filled IDs:
-  ApplicationFeeRefunds: __webpack_require__(286),
-  ChargeRefunds: __webpack_require__(287),
-  CustomerCards: __webpack_require__(288),
-  CustomerSubscriptions: __webpack_require__(289),
-  TransferReversals: __webpack_require__(290),
+  ApplicationFeeRefunds: __webpack_require__(152),
+  ChargeRefunds: __webpack_require__(153),
+  CustomerCards: __webpack_require__(154),
+  CustomerSubscriptions: __webpack_require__(155),
+  TransferReversals: __webpack_require__(156),
 
   // Namespaced resources
   Issuing: resourceNamespace('issuing', {
-    Authorizations: __webpack_require__(291),
-    Cardholders: __webpack_require__(292),
-    Cards: __webpack_require__(293),
-    Disputes: __webpack_require__(294),
-    Transactions: __webpack_require__(295),
+    Authorizations: __webpack_require__(157),
+    Cardholders: __webpack_require__(158),
+    Cards: __webpack_require__(159),
+    Disputes: __webpack_require__(160),
+    Transactions: __webpack_require__(161),
   }),
   Reporting: resourceNamespace('reporting', {
-    ReportRuns: __webpack_require__(296),
-    ReportTypes: __webpack_require__(297),
+    ReportRuns: __webpack_require__(162),
+    ReportTypes: __webpack_require__(163),
   }),
   Sigma: resourceNamespace('sigma', {
-    ScheduledQueryRuns: __webpack_require__(298),
+    ScheduledQueryRuns: __webpack_require__(164),
   }),
   Terminal: resourceNamespace('terminal', {
-    ConnectionTokens: __webpack_require__(299),
-    Locations: __webpack_require__(300),
-    Readers: __webpack_require__(301),
+    ConnectionTokens: __webpack_require__(165),
+    Locations: __webpack_require__(166),
+    Readers: __webpack_require__(167),
   }),
 };
 
@@ -1845,8 +1711,8 @@ function Stripe(key, version) {
   this.setApiKey(key);
   this.setApiVersion(version);
 
-  this.errors = __webpack_require__(56);
-  this.webhooks = __webpack_require__(302);
+  this.errors = __webpack_require__(33);
+  this.webhooks = __webpack_require__(168);
 }
 
 Stripe.prototype = {
@@ -2002,19 +1868,19 @@ module.exports.Stripe = Stripe;
 
 
 /***/ }),
-/* 240 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = {"_from":"stripe","_id":"stripe@6.12.1","_inBundle":false,"_integrity":"sha512-1zBx/ruJRWYaQYArld/Nju5+/1e+kx69XFfMpA6lB7yhGitTBlneA9KrHzmhb9geAoJmiUiXg+deKWyIf03wHA==","_location":"/stripe","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"stripe","name":"stripe","escapedName":"stripe","rawSpec":"","saveSpec":null,"fetchSpec":"latest"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/stripe/-/stripe-6.12.1.tgz","_shasum":"fbe74fefd99f256f0d713c97f6ff36221add8d27","_spec":"stripe","_where":"/home/markfisher/Development/run2wellbeing","author":{"name":"Stripe","email":"support@stripe.com","url":"https://stripe.com/"},"bugs":{"url":"https://github.com/stripe/stripe-node/issues"},"bugs:":"https://github.com/stripe/stripe-node/issues","bundleDependencies":false,"contributors":[{"name":"Ask Bjørn Hansen","email":"ask@develooper.com","url":"http://www.askask.com/"},{"name":"Michelle Bu","email":"michelle@stripe.com"},{"name":"Alex Sexton","email":"alex@stripe.com"},{"name":"James Padolsey"}],"dependencies":{"lodash.isplainobject":"^4.0.6","qs":"~6.5.1","safe-buffer":"^5.1.1"},"deprecated":false,"description":"Stripe API wrapper","devDependencies":{"chai":"~4.1.2","chai-as-promised":"~7.1.1","coveralls":"^3.0.0","eslint":"^4.19.1","eslint-plugin-chai-friendly":"^0.4.0","mocha":"~5.0.5","nyc":"^11.3.0"},"engines":{"node":">=4"},"homepage":"https://github.com/stripe/stripe-node","keywords":["stripe","payment processing","credit cards","api"],"license":"MIT","main":"lib/stripe.js","name":"stripe","repository":{"type":"git","url":"git://github.com/stripe/stripe-node.git"},"scripts":{"clean":"rm -rf ./.nyc_output ./node_modules/.cache ./coverage","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","lint":"eslint .","mocha":"nyc mocha","report":"nyc -r text -r lcov report","test":"npm run lint && npm run mocha"},"version":"6.12.1"}
 
 /***/ }),
-/* 241 */
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = require("child_process");
 
 /***/ }),
-/* 242 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2043,15 +1909,15 @@ module.exports.ResourceNamespace = ResourceNamespace;
 
 
 /***/ }),
-/* 243 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var stringify = __webpack_require__(244);
-var parse = __webpack_require__(245);
-var formats = __webpack_require__(101);
+var stringify = __webpack_require__(110);
+var parse = __webpack_require__(111);
+var formats = __webpack_require__(59);
 
 module.exports = {
     formats: formats,
@@ -2061,14 +1927,14 @@ module.exports = {
 
 
 /***/ }),
-/* 244 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(100);
-var formats = __webpack_require__(101);
+var utils = __webpack_require__(58);
+var formats = __webpack_require__(59);
 
 var arrayPrefixGenerators = {
     brackets: function brackets(prefix) { // eslint-disable-line func-name-matching
@@ -2278,13 +2144,13 @@ module.exports = function (object, opts) {
 
 
 /***/ }),
-/* 245 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(100);
+var utils = __webpack_require__(58);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -2459,14 +2325,14 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
-/* 246 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var makeRequest = __webpack_require__(104);
-var utils = __webpack_require__(18);
+var makeRequest = __webpack_require__(62);
+var utils = __webpack_require__(9);
 
 function makeAutoPaginationMethods(self, requestArgs, spec, firstPagePromise) {
   var promiseCache = {currentPromise: null};
@@ -2674,15 +2540,15 @@ function wrapAsyncIteratorWithCallback(asyncIteratorNext, onItem) {
 
 
 /***/ }),
-/* 247 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isPlainObject = __webpack_require__(102);
-var stripeMethod = __webpack_require__(103);
-var utils = __webpack_require__(18);
+var isPlainObject = __webpack_require__(60);
+var stripeMethod = __webpack_require__(61);
+var utils = __webpack_require__(9);
 
 module.exports = {
 
@@ -2793,7 +2659,7 @@ module.exports = {
 
 
 /***/ }),
-/* 248 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2806,7 +2672,7 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 249 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2857,7 +2723,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 250 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2890,7 +2756,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 251 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2917,7 +2783,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 252 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2999,7 +2865,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 253 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3018,7 +2884,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 254 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3032,14 +2898,14 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 255 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var StripeResource = __webpack_require__(0);
-var utils = __webpack_require__(18);
+var utils = __webpack_require__(9);
 var stripeMethod = StripeResource.method;
 
 module.exports = StripeResource.extend({
@@ -3211,7 +3077,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 256 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3239,7 +3105,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 257 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3265,7 +3131,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 258 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3279,7 +3145,7 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 259 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3298,18 +3164,18 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 260 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Buffer = __webpack_require__(16).Buffer;
-var utils = __webpack_require__(18);
+var Buffer = __webpack_require__(10).Buffer;
+var utils = __webpack_require__(9);
 var StripeResource = __webpack_require__(0);
 var stripeMethod = StripeResource.method;
-var multipartDataGenerator = __webpack_require__(261);
-var Error = __webpack_require__(56);
+var multipartDataGenerator = __webpack_require__(127);
+var Error = __webpack_require__(33);
 
 module.exports = StripeResource.extend({
 
@@ -3391,13 +3257,13 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 261 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Buffer = __webpack_require__(16).Buffer;
+var Buffer = __webpack_require__(10).Buffer;
 
 // Method for formatting HTTP body for the multipart/form-data specification
 // Mostly taken from Fermata.js
@@ -3443,7 +3309,7 @@ module.exports = multipartDataGenerator;
 
 
 /***/ }),
-/* 262 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3461,7 +3327,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 263 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3478,7 +3344,7 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 264 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3486,7 +3352,7 @@ module.exports = __webpack_require__(0).extend({
 
 var StripeResource = __webpack_require__(0);
 var stripeMethod = StripeResource.method;
-var utils = __webpack_require__(18);
+var utils = __webpack_require__(9);
 
 module.exports = StripeResource.extend({
 
@@ -3528,7 +3394,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 265 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3544,7 +3410,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 266 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3559,7 +3425,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 267 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3578,7 +3444,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 268 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3616,7 +3482,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 269 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3651,7 +3517,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 270 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3686,7 +3552,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 271 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3700,7 +3566,7 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 272 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3726,7 +3592,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 273 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3752,7 +3618,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 274 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3805,7 +3671,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 275 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3825,7 +3691,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 276 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3851,7 +3717,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 277 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3885,7 +3751,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 278 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3901,14 +3767,14 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 279 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var StripeResource = __webpack_require__(0);
-var utils = __webpack_require__(18);
+var utils = __webpack_require__(9);
 var stripeMethod = StripeResource.method;
 
 module.exports = StripeResource.extend({
@@ -3940,7 +3806,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 280 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3960,7 +3826,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 281 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3973,7 +3839,7 @@ module.exports = __webpack_require__(0).extend({
 
 
 /***/ }),
-/* 282 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3995,7 +3861,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 283 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4064,7 +3930,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 284 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4085,7 +3951,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 285 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4107,7 +3973,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 286 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4134,7 +4000,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 287 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4161,7 +4027,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 288 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4187,7 +4053,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 289 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4224,7 +4090,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 290 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4252,7 +4118,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 291 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4281,7 +4147,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 292 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4296,7 +4162,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 293 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4319,7 +4185,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 294 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4334,7 +4200,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 295 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4349,7 +4215,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 296 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4364,7 +4230,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 297 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4379,7 +4245,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 298 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4395,7 +4261,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 299 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4410,7 +4276,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 300 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4425,7 +4291,7 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 301 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4440,13 +4306,13 @@ module.exports = StripeResource.extend({
 
 
 /***/ }),
-/* 302 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var crypto = __webpack_require__(2);
 
-var utils = __webpack_require__(18);
-var Error = __webpack_require__(56);
+var utils = __webpack_require__(9);
+var Error = __webpack_require__(33);
 
 var Webhook = {
   DEFAULT_TOLERANCE: 300,
@@ -4555,12 +4421,147 @@ module.exports = Webhook;
 
 
 /***/ }),
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
 /* 303 */,
 /* 304 */,
 /* 305 */,
 /* 306 */,
 /* 307 */,
-/* 308 */
+/* 308 */,
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4568,7 +4569,7 @@ module.exports = Webhook;
 
 // require('dotenv').config();
 // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const stripe = __webpack_require__(239)(process.env.STRIPE_TEST_KEY);
+const stripe = __webpack_require__(105)(process.env.STRIPE_TEST_KEY);
 
 module.exports.handler = (event, context, callback) => {
   console.log('creating Subscription...'); // Pull out the amount and id for the charge from the POST
