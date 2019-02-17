@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 305);
+/******/ 	return __webpack_require__(__webpack_require__.s = 304);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4556,8 +4556,7 @@ module.exports = Webhook;
 /* 301 */,
 /* 302 */,
 /* 303 */,
-/* 304 */,
-/* 305 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4568,7 +4567,7 @@ module.exports = Webhook;
 const stripe = __webpack_require__(105)(process.env.STRIPE_TEST_KEY);
 
 module.exports.handler = (event, context, callback) => {
-  console.log('creating charge...'); // Pull out the amount and id for the charge from the POST
+  console.log('creating challenge charge...'); // Pull out the amount and id for the charge from the POST
   //   console.log(event);
 
   const requestData = JSON.parse(event.body); // console.log(requestData);
@@ -4587,7 +4586,7 @@ module.exports.handler = (event, context, callback) => {
     amount,
     source: token,
     currency: 'nzd',
-    description: 'Run 2 Wellbeing Total Wellness Package'
+    description: 'Run 2 Wellbeing Mental Health Challenge'
   }).then(charge => {
     // Success response
     // console.log(charge);
