@@ -1,14 +1,13 @@
-require('dotenv').config();
+// require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// const stripe = require('stripe')(process.env.STRIPE_TEST_KEY);
 
 module.exports.handler = (event, context, callback) => {
-  console.log('creating charge...');
+  console.log('creating Subscription...');
 
   // Pull out the amount and id for the charge from the POST
-  //   console.log(event);
   const requestData = JSON.parse(event.body);
-  // console.log(requestData);
-  const amount = requestData.amount;
+  const { email } = requestData.token;
   const token = requestData.token.id;
 
   // Headers to prevent CORS issues
@@ -17,23 +16,31 @@ module.exports.handler = (event, context, callback) => {
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
-  return stripe.charges
+  return stripe.customers
     .create({
-      // Create Stripe charge with token
-      amount,
+      description: `Customer for ${email}`,
+      email,
       source: token,
-      currency: 'nzd',
-      description: 'Run 2 Wellbeing Total Wellness Package',
     })
-    .then(charge => {
+    .then(custID => {
+      console.log(`This is custID: ${custID.id}`);
+      stripe.subscriptions.create({
+        customer: custID.id,
+        items: [
+          {
+            plan: 'fortnightlypaymentplan',
+          },
+        ],
+      });
+    })
+    .then(subscription => {
       // Success response
-      // console.log(charge);
       const response = {
         headers,
         statusCode: 200,
         body: JSON.stringify({
-          message: `Charge processed!`,
-          charge,
+          message: `Subscription Created!`,
+          subscription,
         }),
       };
       callback(null, response);

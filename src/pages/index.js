@@ -43,9 +43,16 @@ export default function Index() {
       <Body>
         <Nav />
 
-        <MainImage src={MountainRunner} alt="Woman running in the mountains at sunrise" width="1920" height="700" />
+        <MainImage
+          src={MountainRunner}
+          alt="Woman running in the mountains at sunrise"
+          width="1920"
+          height="700"
+        />
 
-        <UseRunning>Using running to build mental health and wellbeing</UseRunning>
+        <UseRunning>
+          Using running to build mental health and wellbeing
+        </UseRunning>
 
         <CTA />
 

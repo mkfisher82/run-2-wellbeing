@@ -36,7 +36,7 @@ const Checkout = class extends React.Component {
   componentDidMount() {
     this.stripeHandler = window.StripeCheckout.configure({
       // You’ll need to add your own Stripe public key to the `checkout.js` file.
-      // key: 'pk_test_STRIPE_PUBLISHABLE_KEY',
+      // key: 'pk_test_zUnLJRPWqAc3PC3hfbRiHRrX',
       key: 'pk_live_rt726IttwFKmfmTFfmTSSh8e',
       closed: () => {
         this.resetButton();
@@ -47,15 +47,17 @@ const Checkout = class extends React.Component {
   resetButton() {
     this.setState({ disabled: false, buttonText: 'BUY NOW' });
   }
+
   openStripeCheckout(event) {
     event.preventDefault();
     this.setState({ disabled: true, buttonText: 'WAITING...' });
     this.stripeHandler.open({
       name: 'Run 2 Wellbeing',
-      amount: amount,
+      amount,
       description: 'Total Wellness Package',
       token: token => {
-        fetch(`.netlify/functions/checkout`, {
+        fetch(`.netlify/functions/oneOffCheckout`, {
+          // fetch(`http://localhost:9000/oneOffCheckout.js`, {
           method: 'POST',
           mode: 'no-cors',
           body: JSON.stringify({
@@ -86,7 +88,10 @@ const Checkout = class extends React.Component {
 
     return (
       <Container>
-        <Button onClick={event => this.openStripeCheckout(event)} disabled={disabled}>
+        <Button
+          onClick={event => this.openStripeCheckout(event)}
+          disabled={disabled}
+        >
           {buttonText}
         </Button>
         {paymentMessage}

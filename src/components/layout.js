@@ -35,12 +35,18 @@ const Layout = ({ children }) => (
             { name: 'description', content: 'The run 2 wellbeing website' },
             { name: 'keywords', content: 'running, wellbeing, mental health' },
             { name: 'viewport', content: 'width=device-width' },
-            { name: 'google-site-verification', content: 'UeaKXdCgblOxP54PXFqr4j8OpPAAuJglUKtJ9UrOfVM' },
+            {
+              name: 'google-site-verification',
+              content: 'UeaKXdCgblOxP54PXFqr4j8OpPAAuJglUKtJ9UrOfVM',
+            },
             // Facebook Opengraph
             { name: 'og:url', content: 'https://www.run2wellbeing.co.nz' },
             { name: 'og:type', content: 'website' },
             { name: 'og:title', content: 'Run 2 Wellbeing' },
-            { name: 'og:description', content: 'Fitness coaching for mind and body' },
+            {
+              name: 'og:description',
+              content: 'Fitness coaching for mind and body',
+            },
             {
               name: 'og:image',
               content:
@@ -51,7 +57,9 @@ const Layout = ({ children }) => (
             { name: 'og:image:width', content: '1920' },
             { name: 'og:image:height', content: '700' },
           ]}
-          link={[{ rel: 'shortcut icon', type: 'image/png', href: `${Favicon}` }]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${Favicon}` },
+          ]}
         >
           <html lang="en" />
         </Helmet>

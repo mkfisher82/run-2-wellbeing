@@ -11,22 +11,20 @@ module.exports = {
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options: {}
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-126884674-1",
+        trackingId: 'UA-126884674-1',
         // Puts tracking script in the head instead of the body
         head: false,
       },
     },
     `gatsby-plugin-stripe-checkout`,
   ],
-}
+};

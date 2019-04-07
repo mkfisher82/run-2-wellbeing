@@ -31,25 +31,23 @@ const Wrapper = styled.div`
   margin: 20px 0px;
 `;
 
-const resource = ({ link, image, title, desc }) => {
-  return (
-    <Wrapper>
-      <Feature>This week&apos;s feature resource </Feature>
-      <Container>
-        <a href={link}>
-          <FeatureImg src={image} alt="Feature resource image" />
-        </a>
-        <div>
-          <h3>
-            <Title href={link} target="_blank">
-              {title}
-            </Title>
-          </h3>
-          <p> {desc} </p>
-        </div>
-      </Container>
-    </Wrapper>
-  );
-};
+const resource = ({ link, image, title, desc }) => (
+  <Wrapper>
+    <Feature>This week&apos;s feature resource </Feature>
+    <Container>
+      <a href={link}>
+        <FeatureImg src={image} alt="Feature resource image" />
+      </a>
+      <div>
+        <h3>
+          <Title href={link} target="_blank">
+            {title}
+          </Title>
+        </h3>
+        <p> {desc} </p>
+      </div>
+    </Container>
+  </Wrapper>
+);
 
 export default resource;
