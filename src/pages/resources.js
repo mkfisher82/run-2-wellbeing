@@ -20,9 +20,10 @@ export default function About() {
       <Container>
         <SectionTitle title="Resources" />
         <p>
-          Unsure about how the simple act of running might benefit your mental health and overall wellbeing? Check out
-          these articles, videos and blog posts to learn more about the power of exercise to change your brain, your
-          body and your life.
+          Unsure about how the simple act of running might benefit your mental
+          health and overall wellbeing? Check out these articles, videos and
+          blog posts to learn more about the power of exercise to change your
+          brain, your body and your life.
         </p>
 
         <FeatureResource
@@ -32,9 +33,14 @@ export default function About() {
           image={FeatureImg}
         />
 
-        {resources.map(resource => {
-          return <Resource key={resource.title} link={resource.link} title={resource.title} desc={resource.desc} />;
-        })}
+        {resources.map(resource => (
+          <Resource
+            key={resource.title}
+            link={resource.link}
+            title={resource.title}
+            desc={resource.desc}
+          />
+        ))}
       </Container>
     </Layout>
   );
@@ -44,7 +50,8 @@ const resources = [
   {
     link: '/blog/dont-despair-the-tough-runs',
     title: "Blog: Don't Despair the Tough Runs",
-    desc: 'Finding running tough in the heat of summer? Use self talk to turn the tough runs into great training',
+    desc:
+      'Finding running tough in the heat of summer? Use self talk to turn the tough runs into great training',
   },
   {
     link: '/blog/running-mum-life',
@@ -108,36 +115,3 @@ const resources = [
       'This article discusses how exercise can both treat and prevent mental health issues.',
   },
 ];
-
-export default function About() {
-  return (
-    <Layout>
-      <Nav />
-      <Container>
-        <SectionTitle title="Resources" />
-        <p>
-          Unsure about how the simple act of running might benefit your mental
-          health and overall wellbeing? Check out these articles, videos and
-          blog posts to learn more about the power of exercise to change your
-          brain, your body and your life.
-        </p>
-
-        <FeatureResource
-          link="/blog/dont-despair-the-tough-runs"
-          title="Don't Despair the Tough Runs"
-          desc="Finding running tough in the heat of summer? Use self talk to turn the tough runs into great training"
-          image={FeatureImg}
-        />
-
-        {resources.map(resource => (
-          <Resource
-            key={resource.title}
-            link={resource.link}
-            title={resource.title}
-            desc={resource.desc}
-          />
-        ))}
-      </Container>
-    </Layout>
-  );
-}
