@@ -5,7 +5,7 @@ import Nav from '../components/nav';
 import SectionTitle from '../components/sectionTitle';
 import Resource from '../components/resource';
 import FeatureResource from '../components/featureResource';
-import FeatureImg from '../images/success.jpg';
+import FeatureImg from '../images/nikki.jpg';
 
 const Container = styled.div`
   max-width: 960px;
@@ -27,9 +27,9 @@ export default function About() {
         </p>
 
         <FeatureResource
-          link="/blog/plan-for-success"
-          title="Plan for your successes... And your failures"
-          desc="We’re entering the season of “goal races” and it’s important to plan ahead if you want to successfully continue running for wellbeing into the future, after the goal race is all said and done. Avoid the “post race blues” with these simple strategies."
+          link="/blog/managing-anxiety-through-exercise"
+          title="Managing Anxiety Through Exercise"
+          desc="In this guest blog, Nikki from Misfit NZ gives her personal account of how exercise helps her manage anxiety"
           image={FeatureImg}
         />
 
@@ -48,14 +48,20 @@ export default function About() {
 
 const resources = [
   {
+    link: '/blog/plan-for-success',
+    title: 'BLOG: Plan for your successes... And your failures',
+    desc:
+      'We’re entering the season of “goal races” and it’s important to plan ahead if you want to successfully continue running for wellbeing into the future, after the goal race is all said and done. Avoid the “post race blues” with these simple strategies.',
+  },
+  {
     link: '/blog/dont-despair-the-tough-runs',
-    title: "Blog: Don't Despair the Tough Runs",
+    title: "BLOG: Don't Despair the Tough Runs",
     desc:
       'Finding running tough in the heat of summer? Use self talk to turn the tough runs into great training',
   },
   {
     link: '/blog/running-mum-life',
-    title: 'Blog: The Running Mum Life',
+    title: 'BLOG: The Running Mum Life',
     desc:
       'Here are my tips for getting out there and running when you have a young family.',
   },
