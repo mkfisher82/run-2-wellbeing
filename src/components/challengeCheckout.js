@@ -36,8 +36,8 @@ const Checkout = class extends React.Component {
   componentDidMount() {
     this.stripeHandler = window.StripeCheckout.configure({
       // You’ll need to add your own Stripe public key to the `checkout.js` file.
-      // key: 'pk_test_zUnLJRPWqAc3PC3hfbRiHRrX',
-      key: 'pk_live_rt726IttwFKmfmTFfmTSSh8e',
+      key: 'pk_test_zUnLJRPWqAc3PC3hfbRiHRrX',
+      // key: 'pk_live_rt726IttwFKmfmTFfmTSSh8e',
       closed: () => {
         this.resetButton();
       },
