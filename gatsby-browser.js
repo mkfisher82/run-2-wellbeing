@@ -7,9 +7,9 @@
 // You can delete this file if you're not using it
 
 exports.onRouteUpdate = () => {
-    if (typeof window !== `undefined`) { window.scrollTo(0, 0)}
+  if (typeof window !== `undefined`) {
+    require('smooth-scroll')('a[href*="#"]');
   }
-  
-  exports.shouldUpdateScroll = args => {
-     return false;
-  };
+};
+
+exports.shouldUpdateScroll = args => false;
