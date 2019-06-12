@@ -3,9 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from './sectionTitle';
 import Package from './package';
-import SubscriptionCheckout from './subscriptionCheckout';
-import OneOffCheckout from './oneOffCheckout';
-import ChallengeCheckout from './challengeCheckout';
+import Checkout from './checkout';
 
 const Container = styled.section`
   position: relative;
@@ -107,7 +105,7 @@ const pricing = () => (
               'Access to the Run 2 Wellbeing closed Facebook support group',
             ]}
           />
-          <OneOffCheckout />
+          <Checkout sku="sku_FEvLZ9Wonck8D6" />
         </Cell>
         <Cell>
           <Package
@@ -121,7 +119,7 @@ const pricing = () => (
               'Continue the program only for as long as you need to',
             ]}
           />
-          <SubscriptionCheckout />
+          <Checkout plan="plan_FEvMs0yO01mezY" sku={false} />
         </Cell>
         <Cell>
           <Package
@@ -134,7 +132,7 @@ const pricing = () => (
               'Learn to use running as a part of your mental health treatment plan',
             ]}
           />
-          <ChallengeCheckout />
+          <Checkout sku="sku_FEvKWskQjjS3k2" />
         </Cell>
       </Grid>
     </Wrapper>
