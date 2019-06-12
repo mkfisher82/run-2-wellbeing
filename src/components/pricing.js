@@ -108,7 +108,7 @@ const pricing = () => (
               'Access to the Run 2 Wellbeing closed Facebook support group',
             ]}
           />
-          <Checkout sku="sku_FEKiQVtUUTrb3R" />
+          <Checkout sku="sku_FEvLZ9Wonck8D6" />
         </Cell>
         <Cell>
           <Package
@@ -135,7 +135,7 @@ const pricing = () => (
               'Learn to use running as a part of your mental health treatment plan',
             ]}
           />
-          <Checkout sku="sku_FEKjL3ohqWItfd" />
+          <Checkout sku="sku_FEvKWskQjjS3k2" />
         </Cell>
       </Grid>
     </Wrapper>
