@@ -3,9 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from './sectionTitle';
 import Package from './package';
-// import SubscriptionCheckout from './subscriptionCheckout';
-// import OneOffCheckout from './oneOffCheckout';
-// import ChallengeCheckout from './challengeCheckout';\
 import Checkout from './checkout';
 
 const Container = styled.section`
@@ -122,7 +119,7 @@ const pricing = () => (
               'Continue the program only for as long as you need to',
             ]}
           />
-          <Checkout plan="fortnightlypaymentplan" sku={false} />
+          <Checkout plan="plan_FEvMs0yO01mezY" sku={false} />
         </Cell>
         <Cell>
           <Package

@@ -53,26 +53,24 @@ const Button = styled(Link)`
   }
 `;
 
-const NavList = ({ menuOpen }) => {
-  return (
-    <NavContainer menuOpen={menuOpen}>
-      <li>
-        <Button to="#programme">Programme</Button>
-      </li>
-      <li>
-        <Button to="#pricing">Pricing</Button>
-      </li>
-      <li>
-        <Button to="/resources">Resources</Button>
-      </li>
-      <li>
-        <Button to="#about">About</Button>
-      </li>
-      <li>
-        <Button to="#contact">Contact</Button>
-      </li>
-    </NavContainer>
-  );
-};
+const NavList = ({ menuOpen }) => (
+  <NavContainer menuOpen={menuOpen}>
+    <li>
+      <Button to="#programme">Programme</Button>
+    </li>
+    <li>
+      <Button to="#pricing">Pricing</Button>
+    </li>
+    <li>
+      <Button to="/resources">Resources</Button>
+    </li>
+    <li>
+      <Button to="#about">About</Button>
+    </li>
+    <li>
+      <Button to="#contact">Contact</Button>
+    </li>
+  </NavContainer>
+);
 
 export default NavList;
