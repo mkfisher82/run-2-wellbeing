@@ -26,5 +26,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-stripe`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+        // ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
   ],
 };
