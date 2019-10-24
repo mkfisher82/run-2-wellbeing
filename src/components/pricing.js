@@ -25,27 +25,27 @@ const Container = styled.section`
   }
 `;
 
-const Button = styled.button`
-  background-color: #107a66;
-  opacity: 0.8;
-  text-decoration: none;
-  font-size: 1em;
-  text-align: center;
-  color: #fff;
-  outline: none;
-  padding: 12px 60px;
-  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  letter-spacing: 1.5px;
-  display: block;
-  margin: 5px auto;
-`;
+// const Button = styled.button`
+//   background-color: #107a66;
+//   opacity: 0.8;
+//   text-decoration: none;
+//   font-size: 1em;
+//   text-align: center;
+//   color: #fff;
+//   outline: none;
+//   padding: 12px 60px;
+//   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+//   border-radius: 6px;
+//   letter-spacing: 1.5px;
+//   display: block;
+//   margin: 5px auto;
+// `;
 
-const Preamble = styled.p`
-  /* font-size: 2rem; */
-  text-align: center;
-  padding: 10px 0;
-`;
+// const Preamble = styled.p`
+//   /* font-size: 2rem; */
+//   text-align: center;
+//   padding: 10px 0;
+// `;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -69,9 +69,9 @@ const pricing = () => (
   <Container>
     <Wrapper>
       <SectionTitle title="Pricing" />
-      <Preamble>Select from one of our four great plans:</Preamble>
+      {/* <Preamble>Select from one of our four great plans:</Preamble> */}
       <Grid>
-        <Cell>
+        {/* <Cell>
           <Package
             name="Starter"
             price="Free"
@@ -89,11 +89,11 @@ const pricing = () => (
             {' '}
             GET STARTED{' '}
           </Button>
-        </Cell>
+        </Cell> */}
         <Cell>
           <Package
             name="Total Wellness"
-            price="$280"
+            price="$99"
             discountPrice="$180"
             onSale={false}
             period="12 Weeks"
@@ -107,7 +107,7 @@ const pricing = () => (
           />
           <Checkout sku="sku_FEvLZ9Wonck8D6" />
         </Cell>
-        <Cell>
+        {/* <Cell>
           <Package
             name="Ongoing Wellness"
             price="$50"
@@ -133,7 +133,7 @@ const pricing = () => (
             ]}
           />
           <Checkout sku="sku_FEvKWskQjjS3k2" />
-        </Cell>
+        </Cell> */}
       </Grid>
     </Wrapper>
   </Container>
