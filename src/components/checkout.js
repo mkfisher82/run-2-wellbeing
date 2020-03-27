@@ -21,11 +21,8 @@ const Checkout = class extends React.Component {
 
   componentDidMount() {
     this.stripe = window.Stripe(
-      // ('pk_test_zUnLJRPWqAc3PC3hfbRiHRrX', {
+      //'pk_test_zUnLJRPWqAc3PC3hfbRiHRrX',
       'pk_live_rt726IttwFKmfmTFfmTSSh8e',
-      {
-        betas: ['checkout_beta_4'],
-      },
     );
   }
 

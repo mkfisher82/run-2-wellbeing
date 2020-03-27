@@ -106,6 +106,7 @@ const pricing = () => (
             ]}
           />
           <Checkout sku="sku_FEvLZ9Wonck8D6" />
+          {/*<Checkout sku="sku_FEKiQVtUUTrb3R" /> */}
         </Cell>
         {/* <Cell>
           <Package
