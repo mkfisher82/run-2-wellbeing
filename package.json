@@ -21,7 +21,7 @@
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-source-filesystem": "^2.0.42-reporter-npm.8",
     "netlify-lambda": "^0.4.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "querystring": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
